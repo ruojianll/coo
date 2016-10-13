@@ -19,6 +19,13 @@
         controller: 'MainController',
         controllerAs: 'main'
       })
+       .state('wzy', {
+        url: '/home',
+        templateUrl: 'app/home/home.html',
+        controller: 'MainController',
+        controllerAs: 'main'
+      });
+
 
     $urlRouterProvider.otherwise('/');
   }
