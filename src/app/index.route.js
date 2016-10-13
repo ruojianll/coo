@@ -13,6 +13,12 @@
         templateUrl: 'app/main/main.html',
         controller: 'MainController',
         controllerAs: 'main'
+      })
+      .state('login', {
+        url: '/denglu',
+        templateUrl: 'app/login/denglu.html',
+        controller: 'MainController',
+        controllerAs: 'main'
       });
 
     $urlRouterProvider.otherwise('/');
