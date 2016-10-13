@@ -30,10 +30,8 @@
         url: '/machao',
         templateUrl: 'app/machao/newkp.html',
         controller: 'MainController'
-
       })
     $urlRouterProvider.otherwise('/home/noloading');
-      });
   }
 
 })();
