@@ -32,6 +32,5 @@
         controller: 'MainController'
       })
     $urlRouterProvider.otherwise('/home/noloading');
-  }
-
+      }
 })();
