@@ -8,20 +8,13 @@
   /** @ngInject */
   function routerConfig($stateProvider, $urlRouterProvider) {
     $stateProvider
-      .state('home', {
-        url: '/',
-        templateUrl: 'app/main/main.html',
-        controller: 'MainController',
-        controllerAs: 'main'
-      })
        .state('wzy', {
         url: '/home',
         templateUrl: 'app/home/home.html',
-        controller: 'MainController',
-        controllerAs: 'main'
+        controller: 'MainController'
       });
 
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/home');
   }
 
 })();
