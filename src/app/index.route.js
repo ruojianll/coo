@@ -7,11 +7,11 @@
 
   /** @ngInject */
   function routerConfig($stateProvider, $urlRouterProvider) {
-       $stateProvider.state('home', {
-        url: '/date',
-        templateUrl: 'app/Bootstrap/date.Bootstrap.html',
-        controller: 'date_con',
-      })
+ //    $stateProvider.state('home', {
+//      url: '/date',
+//      templateUrl: 'app/Bootstrap/date.Bootstrap.html',
+//      controller: 'date_con',
+//    })
 //			 .state('list', {
 //      url: '/',
 //
@@ -24,7 +24,7 @@
 //      controller: 'MainController',
 //      controllerAs: 'main'
 //    })
-			.state('card', {
+			$stateProvider.state('card', {
         url: '/card',
         templateUrl: 'app/card/card.html',
         controller: 'MainController',
