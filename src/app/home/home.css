@@ -1,0 +1,57 @@
+body, h1, h2, h3, h4, h5, h6, hr,b , p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, s ,legend, button, input, textarea, th, td
+	{	padding:0;
+		margin:0;
+		font-family: "微软雅黑";
+		outline: none;
+	}
+.zheng{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	background: url(../../assets/img/content.jpg);
+	
+}	
+.header{
+	width: 100%;
+	height: 52px;
+	background:url(../../assets/img/nav.jpg);
+	padding: 0 11%;
+	box-sizing: border-box;
+}
+.hed-l{
+	float: left;
+	width: 40px;
+	height: 34px;
+}
+.hed-l img{
+	display: block;
+	padding-top: 10px;
+}
+.hed-r{
+	width: auto;
+	float: right;
+	line-height: 52px;
+	cursor: pointer;
+}
+.hed-r span{
+    font-size: 20px;
+	float: left;
+	line-height: 52px;
+	font-size: 18px;
+	color: #3d78ae;
+}
+.hed-r a{
+	color: #3d78ae;
+	text-decoration: none;
+	width: 16px;
+	display: block;
+	float: right;
+	font-size: 12px;
+	line-height: 52px;
+	padding-left: 4px;
+}
+.content{
+	width: 100%;
+	height: 890px;
+	background: url(../../assets/img/content.jpg);
+}
