@@ -13,8 +13,12 @@
         templateUrl: 'app/main/main.html',
         controller: 'MainController',
         controllerAs: 'main'
-      })
-      .state('wzy.login', {
+      }).state('card', {
+        url: '/card',
+        templateUrl: 'app/card/card.html',
+        controller: 'MainController',
+        controllerAs: 'main'
+}).state('wzy.login', {
         url: '/denglu',
         templateUrl: 'app/login/denglu.html',
         controller: 'MainController',
@@ -24,11 +28,11 @@
         templateUrl: 'app/haoqing/weidenglu.html',
         controller: 'MainController',
         controllerAs: 'main'
-      })
-       .state('wzy', {
+      }).state('wzy', {
         url: '/home',
         templateUrl: 'app/home/home.html',
         controller: 'MainController'
+
       });
     $urlRouterProvider.otherwise('/home/haoqing');
   }
