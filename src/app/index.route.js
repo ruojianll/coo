@@ -13,7 +13,12 @@
         templateUrl: 'app/main/main.html',
         controller: 'MainController',
         controllerAs: 'main'
-      });
+      }).state('haoqing', {
+        url: '/haoqing',
+        templateUrl: 'app/haoqing/weidenglu.html',
+        controller: 'MainController',
+        controllerAs: 'main'
+      })
 
     $urlRouterProvider.otherwise('/');
   }
