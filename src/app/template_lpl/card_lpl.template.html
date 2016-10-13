@@ -1,0 +1,43 @@
+<div class="addCard_lpl">
+	<div class="top_lpl">
+		<p contenteditable="true">新卡片</p>
+		<span class="glyphicon glyphicon-trash"></span>		
+		<div  class="btn-group" uib-dropdown is-open="status.isopen">
+      		<span class="glyphicon glyphicon-plus" id="single-button" type="button" class="btn btn-primary" uib-dropdown-toggle ng-disabled="disabled"></span>
+      		
+      		<ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+		        <li role="menuitem" ng-click="fn()"><a href="javascript:;" >文本</a></li>
+		        <li role="menuitem"><a href="javascript:;">时间</a></li>
+		        <li role="menuitem"><a href="javascript:;">选择框</a></li>
+		        <li role="menuitem"><a href="javascript:;">@</a></li>
+		        <li role="menuitem"><a href="javascript:;">图片</a></li>          
+      		</ul>
+    	</div>
+	</div>
+	<div class="content_lpl">
+		<p>新图片</p>
+		<div class="pic_lpl"><img src="../../assets/img/san (4).jpg"></div>
+	</div>
+	<div class="inp1" ng-show='show'>
+		<input type="text" placeholder="新文本">
+	</div>
+	<div class="inp1" ng-show='show'>
+		<input type="text" ng-model='data' placeholder="新文本时间">
+	</div>
+	<div class="inp1" id='checkbox_lpl' ng-show='show'>
+		<input type="checkbox" ><span>新选择框</span>
+	</div>
+	<div class="inp1" id='inp1' ng-show='show'>
+		<input type="text" ng-model='data' placeholder="@未指定用户">
+	</div>
+	
+</div>
+		
+		
+<!--时间-->		
+<!--<div>	
+	<div style="display:inline-block; min-height:290px;">
+		<div uib-datepicker ng-model="dt" class="well well-sm" datepicker-options="options"></div>
+	</div>
+</div>-->
+

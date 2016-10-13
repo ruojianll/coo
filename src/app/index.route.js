@@ -9,13 +9,13 @@
   function routerConfig($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('home', {
-        url: '/',
-        templateUrl: 'app/main/main.html',
-        controller: 'MainController',
-        controllerAs: 'main'
+        url: '/card',
+        templateUrl: 'app/template_lpl/card_lpl.template.html',
+        controller: 'card_lpl',
+        
       });
 
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/card');
   }
 
 })();
