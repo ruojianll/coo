@@ -31,18 +31,21 @@ body, h1, h2, h3, h4, h5, h6, hr,b , p, blockquote, dl, dt, dd, ul, ol, li, pre,
 	width: auto;
 	float: right;
 	line-height: 52px;
+	cursor: pointer;
 }
 .hed-r span{
+    font-size: 20px;
 	float: left;
 	line-height: 52px;
 	font-size: 18px;
-	
+	color: #3d78ae;
 }
 .hed-r a{
+	color: #3d78ae;
+	text-decoration: none;
 	width: 16px;
 	display: block;
 	float: right;
-	color: #000;
 	font-size: 12px;
 	line-height: 52px;
 	padding-left: 4px;

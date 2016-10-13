@@ -14,7 +14,7 @@
         controller: 'MainController',
         controllerAs: 'main'
       })
-      .state('login', {
+      .state('wzy.login', {
         url: '/denglu',
         templateUrl: 'app/login/denglu.html',
         controller: 'MainController',

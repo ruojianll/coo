@@ -10,15 +10,15 @@
 	margin:0 auto;
 	padding-top:160px;
 }
-.main p{
+.ll-main p{
 	width:422px;
 	height:44px;	
 	border-radius: 6px;
 	background:#777777;
 	margin:0 auto;
 }
-.main p span{
-	width:107px;
+.ll-main p span{
+	width:95px;
 	height:100%;
 	display:block;
 	text-align:right;
@@ -28,12 +28,13 @@
 	font-size:23px;
 	color:white;
 }
-.main p input{
+.ll-main p input{
 	width:301px;
 	border-radius: 6px;
 	height:34px;
 	border:1px solid #a7a9a6;
 	margin-top:5px;
+	margin-left: 10px;
 	outline: none;
 	font-size:13px;
 	font-weight:600;
