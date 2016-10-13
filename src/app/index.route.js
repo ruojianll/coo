@@ -26,10 +26,14 @@
         url: '/home',
         templateUrl: 'app/home/home.html',
         controller: 'accountServ'
+      }).state('wzy.machao', {
+        url: '/machao',
+        templateUrl: 'app/machao/newkp.html',
+        controller: 'MainController'
 
+      })
+    $urlRouterProvider.otherwise('/home/noloading');
       });
-    $urlRouterProvider.otherwise('/home/noloading'); 
-
   }
 
 })();
