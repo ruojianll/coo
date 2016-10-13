@@ -17,11 +17,12 @@
       .state('wzy.login', {
         url: '/denglu',
         templateUrl: 'app/login/denglu.html',
-        controller: 'MainController',
-        controllerAs: 'main'
-      }).state('wzy.haoqing', {
-        url: '/haoqing',
-        templateUrl: 'app/haoqing/weidenglu.html',
+        controller: 'accountServ'
+
+      })
+      .state('wzy.noloading', {
+        url: '/noloading',
+        templateUrl: 'app/noloading/weidenglu.html',
         controller: 'MainController',
         controllerAs: 'main'
       })
@@ -30,7 +31,7 @@
         templateUrl: 'app/home/home.html',
         controller: 'MainController'
       });
-    $urlRouterProvider.otherwise('/home/haoqing');
+    $urlRouterProvider.otherwise('/home/noloading');
   }
 
 })();
