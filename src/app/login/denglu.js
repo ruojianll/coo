@@ -1,4 +1,3 @@
-
 angular.module('coo').service('apiServ',function($http,environment,$q){
     var handle = function(url,data,type){
         url = environment.http + url;
