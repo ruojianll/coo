@@ -1,3 +1,5 @@
+src/app/Bootstrap
+src/app/my_card
 node_modules/
 bower_components/
 coverage/
