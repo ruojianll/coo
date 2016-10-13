@@ -16,7 +16,6 @@
         url: '/denglu',
         templateUrl: 'app/login/denglu.html',
         controller: 'accountServ'
-
       })
       .state('wzy.noloading', {
         url: '/noloading',
@@ -26,8 +25,7 @@
       }).state('wzy', {
         url: '/home',
         templateUrl: 'app/home/home.html',
-        controller: 'MainController'
-
+        controller: 'accountServ'
       });
     $urlRouterProvider.otherwise('/home/noloading');
   }
