@@ -44,7 +44,12 @@
         templateUrl: 'app/home/home.html',
         controller: 'MainController'
 
-      });
+      }).state('wzy.machao', {
+        url: '/machao',
+        templateUrl: 'app/machao/newkp.html',
+        controller: 'MainController'
+
+      })
     $urlRouterProvider.otherwise('/home/haoqing');
 
   }
