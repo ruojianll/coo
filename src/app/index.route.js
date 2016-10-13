@@ -7,14 +7,16 @@
 
   /** @ngInject */
   function routerConfig($stateProvider, $urlRouterProvider) {
-    $stateProvider
-      .state('home', {
+       $stateProvider.state('home', {
+        url: '/date',
+        templateUrl: 'app/Bootstrap/date.Bootstrap.html',
+        controller: 'date_con',
+      })
+			 $stateProvider.state('list', {
         url: '/',
-        templateUrl: 'app/main/main.html',
-        controller: 'MainController',
-        controllerAs: 'main'
+        templateUrl: 'app/card/list.card.html',
+        controller: 'list_con',
       });
-
     $urlRouterProvider.otherwise('/');
   }
 

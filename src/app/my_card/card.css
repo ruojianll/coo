@@ -1,0 +1,41 @@
+*{padding: 0;
+margin: 0;
+border: 0;
+}
+
+.card{
+	width: 374px;
+	height:auto;
+	background: #eee;
+}
+.card_head{
+	width: 374px;
+	height:96px;
+	padding-top: 28px;
+}
+.wenben{
+	margin-left: 32px;
+	width: 258px;
+	font-size: 29px;
+	display: inline-block;
+	float: left;
+	outline: none;
+	max-height: 35px;
+}
+#add{
+	width: 35px;
+	height: 34px;
+	font-size: 29px;
+}
+#del{
+	width: 35px;
+	height: 34px;
+	font-size: 34px;
+}
+.btn-group.open .dropdown-toggle{
+	box-shadow:none;
+	-webkit-box-shadow:none;
+}
+.btn-group{
+	float: left;
+}
