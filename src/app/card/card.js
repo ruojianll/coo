@@ -1,4 +1,4 @@
- angular.module('coo').controller('TimepickerDemoCtrl', function ($scope) { 
+ angular.module('coo').controller('card', function ($scope) { 
  $scope.mytime = new Date();
 
  
