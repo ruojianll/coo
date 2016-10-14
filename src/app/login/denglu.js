@@ -50,13 +50,14 @@ angular.module('coo').service('apiServ',function($http,environment,$q){
 }).constant('environment',{
 	http:'http://10.115.19.223:8091'
 }).controller('accountServ',function($scope,$http,apiServ,environment){
+	$scope.user_name="未登录";
 	$scope.denglu=function(){
 		apiServ.post('/api/account/login',{
 			user_name:$scope.name,
 			password:$scope.psd
 		}).then(
 	        function(data){
-	          console.log(data);
+	        	 	$scope.$parent.user_name=data.user_name;
 	            var user_id = data.id;
 	            var token = data.web_token;
 	            localStorage['user_id'] = user_id;
