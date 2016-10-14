@@ -7,24 +7,8 @@
 
   /** @ngInject */
   function routerConfig($stateProvider, $urlRouterProvider) {
- //    $stateProvider.state('home', {
-//      url: '/date',
-//      templateUrl: 'app/Bootstrap/date.Bootstrap.html',
-//      controller: 'date_con',
-//    })
-//			 .state('list', {
-//      url: '/',
-//
-//      templateUrl: 'app/card/list.card.html',
-//      controller: 'list_con',
-//    });
-//  $urlRouterProvider.otherwise('/');
 
-//      templateUrl: 'app/main/main.html',
-//      controller: 'MainController',
-//      controllerAs: 'main'
-//    })
-			$stateProvider.state('card', {
+			$stateProvider.state('wzy.card', {
         url: '/card',
         templateUrl: 'app/card/card.html',
         controller: 'MainController',
