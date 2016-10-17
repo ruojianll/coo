@@ -2,36 +2,13 @@ body,html{
 	width: 100%;
 	height: 100%;
 }
-.header{
-	height: 52px;
-	width: 100%;
-	background: #ead8d6;
-	line-height: 52px;
-}
-.left{
-	float: left;
-	margin-left: 213px;
-	margin-top: 8px;
-}
-.header p{
-	float: right;
-	margin-right: 219px;
-	color: #4479ae;
-	font-size: 19px;
-}
-.header p a{
-	color: #4479ae;
-	font-size: 19px;
-}
 .main{
 	width: 100%;
 	height: 627px;
-	/*background: url(../../assets/img/content.jpg);*/
 	text-align: center;
 }
 .main p{
 	width: 420px;
-	/*height: 50px;*/
 	color: #313431;
 	font-size: 45px;
 	padding-top: 250px;
