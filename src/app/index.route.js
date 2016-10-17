@@ -24,7 +24,7 @@
         controller: 'MainController',
         controllerAs: 'main'
       }).state('wzy', {
-        url: '/home',
+        url: '/home ',
         templateUrl: 'app/home/home.html',
         controller: 'won'
       }).state('wzy.machao', {
