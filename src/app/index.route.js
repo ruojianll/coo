@@ -25,7 +25,7 @@
       }).state('wzy', {
         url: '/home',
         templateUrl: 'app/home/home.html',
-        controller: 'accountServ'
+        controller: 'won'
       }).state('wzy.machao', {
         url: '/machao',
         templateUrl: 'app/machao/newkp.html',
