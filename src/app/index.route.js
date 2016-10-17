@@ -40,13 +40,7 @@
         url: '/machao',
         templateUrl: 'app/machao/newkp.html',
         controller: 'MainController'
-
-});
-    $urlRouterProvider.otherwise('/home/haoqing');
-  }
-
-
-      })
+        })
     $urlRouterProvider.otherwise('/home/noloading');
       }
 
