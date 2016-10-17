@@ -2,32 +2,32 @@
 	margin:0px;
 	padding:0px;
 }
-.zt{
+.card-zt{
 	width:374px;
 	height:auto;
 	background:#ededed;
 }
-.top{
+.card-top{
 	height: 96px;
 	border-bottom:2px solid #dddddd;
 	position: relative;
 	
 }
-.top p{
+.card-top p{
 	display: inline-block;
 	float:left;
 	margin-left:31px;
 	margin-top:39px;
 	font-size:30px;
 }
-.top span{
+.card-top span{
 	display: block;
 	float: right;
 	font-size:29px;
 	margin-top:33px;
 	margin-right:5px;
 }	
-.content{
+.card-content{
 	height: 528px;
 	width:352px;
 	margin-left:11px;
@@ -35,19 +35,19 @@
 	background:#e2e2e2;
 	margin-right:11px;
 	}
-.content p{
+.card-content p{
 	text-align: center;
 	font-size:14px;
 	padding-top:13px;
 	margin-bottom: 0px;
 }
-.pic{
+.card-pic{
 	width: 328px;
 	height: 495px;
 	background:red;
 	margin-left:12px;
 }
-.selec{
+.card-selec{
 	width:174px;
 	height:150px;
 	border:1px solid #99918e;
@@ -56,10 +56,10 @@
 	top:63px;
 	right:-105px;
 }
-.btn-group{
+.card-btn-group{
 	float: right;
 }
-.inp1{
+.card-inp1{
 	width: 352px;
 	height:27px;
 	background:#e2e2e2;
@@ -68,7 +68,7 @@
 	margin-right:10px;
 	text-indent: 12px;
 }
-.inp1 .txt{
+.card-inp1 .txt{
 	outline:none;
 	border:0px;
 	background:#e2e2e2;
@@ -78,8 +78,18 @@
 	
 }
 
-.inp1 .chk{
+.card-inp1 .chk{
 	height:13px;
 	margin-top:7px;
 	margin-right:6px;
 }
+  .full button span {
+    background-color: limegreen;
+    border-radius: 32px;
+    color: black;
+  }
+  .partially button span {
+    background-color: orange;
+    border-radius: 32px;
+    color: black;
+  }

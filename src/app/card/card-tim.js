@@ -1,6 +1,6 @@
-angular.module('ui.bootstrap.demo').controller('DatepickerDemoCtrl', function ($scope) {
-  $scope.today = function() {
+angular.module('ui.bootstrap').controller('DatepickerDemoCtrl', function ($scope) {
+$scope.today = function() {
     $scope.dt = new Date();
-  }
- 
+}
+   
 });

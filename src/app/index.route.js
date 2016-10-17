@@ -13,7 +13,7 @@
         templateUrl: 'app/main/main.html',
         controller: 'MainController',
         controllerAs: 'main'
-      }).state('card', {
+      }).state('wzy.card', {
         url: '/card',
         templateUrl: 'app/card/card.html',
         controller: 'MainController',
@@ -32,8 +32,7 @@
         url: '/home',
         templateUrl: 'app/home/home.html',
         controller: 'MainController'
-
-      });
+});
     $urlRouterProvider.otherwise('/home/haoqing');
   }
 
