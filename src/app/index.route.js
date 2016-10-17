@@ -14,10 +14,6 @@
 			}).state('wzy.login', {
         url: '/denglu',
         templateUrl: 'app/login/denglu.html',
-        controller: 'MainController'
-      }).state('wzy.haoqing', {
-        url: '/haoqing',
-        templateUrl: 'app/haoqing/weidenglu.html',
         controller: 'accountServ'
       })
       .state('wzy.noloading', {
@@ -36,9 +32,9 @@
         controller: 'MainController'
 
       });
-    $urlRouterProvider.otherwise('/home/haoqing');
+    $urlRouterProvider.otherwise('/home/noloading');
 
-//		$urlRouterProvider.otherwise('/home/noloading');
+
   
 
   }
