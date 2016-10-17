@@ -6,7 +6,7 @@
     .config(routerConfig);
 
   /** @ngInject */
-  function routerConfig($stateProvider, $urlRouterProvider) {
+  function routerConfig($stateProvider, $urlRouterProvider){
     $stateProvider.state('card', {
         url: '/card',
         templateUrl: 'app/card/card.html',

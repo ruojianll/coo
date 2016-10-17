@@ -3,7 +3,7 @@ angular.module("coo").controller("noloading",function($scope){
 		$scope.nologin="您暂未登录 ，";
 		$scope.nologinNo="请登录"
 	}else{
-		$scope.nologin="您以登录 。";
+		$scope.nologin="您已登录 。";
 		$scope.nologinNo=""
 	}
 })
