@@ -46,8 +46,7 @@
   }
 
 
-      })
-    $urlRouterProvider.otherwise('/home/noloading');
-      }
+
+
 
 })();
