@@ -6,8 +6,14 @@
     .config(routerConfig);
 
   /** @ngInject */
+<<<<<<< HEAD
   function routerConfig($stateProvider, $urlRouterProvider){
 			$stateProvider.state('card', {
+=======
+  function routerConfig($stateProvider, $urlRouterProvider) {
+
+    $stateProvider.state('card', {
+>>>>>>> b453f4ca72ce41e613a945ea4158da1edd829ad7
         url: '/card',
         templateUrl: 'app/card/card.html',
         controller: 'MainController',
@@ -15,7 +21,7 @@
 		}).state('wzy.login', {
         url: '/denglu',
         templateUrl: 'app/login/denglu.html',
-        controller: 'accountServ'
+        controller: 'accountServ',
       })
       .state('wzy.noloading', {
         url: '/noloading',
@@ -25,12 +31,13 @@
       }).state('wzy', {
         url: '/home',
         templateUrl: 'app/home/home.html',
-        controller: 'accountServ'
+        controller: 'won'
       }).state('wzy.machao', {
         url: '/machao',
         templateUrl: 'app/machao/newkp.html',
         controller: 'MainController'
-      })
+        })
     $urlRouterProvider.otherwise('/home/noloading');
       }
+
 })();

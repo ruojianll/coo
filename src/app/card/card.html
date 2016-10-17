@@ -1,46 +1,53 @@
 
-		<div class="zt">
+		<div class="card-zt">
 			
-			<div class="top">
+			<div class="card-top">
 				<p>新卡片</p>
 				<span class="glyphicon glyphicon-trash"></span>
-				<div  class="btn-group" uib-dropdown is-open="status.isopen">
+				<div  class="card-btn-group" uib-dropdown is-open="status.isopen">
       <span class="glyphicon glyphicon-plus" id="single-button" type="button" class="btn btn-primary" uib-dropdown-toggle ng-disabled="disabled"></span>
       </button>
       <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
-        <li role="menuitem"><a href="javascript:;" >文本</a></li>
+        <li role="menuitem"><a href="javascript:;">文本</a></li>
         <li role="menuitem"><a href="javascript:;">时间</a></li>
-        <li role="menuitem"><a href="javascript:;"><option>选择框<select></select></option></a></li>
-        <li role="menuitem"><a href="javascript:;">@</a></li>
-        <li role="menuitem"><a href="javascript:;">图片</a></li>
+        <li role="menuitem" ><a href="javascript:;"><option>选择框<select></select></option></a></li>
+        <li role="menuitem" ><a href="javascript:;">@</a></li>
+        <li role="menuitem" ><a href="javascript:;">图片</a></li>
           
       </ul>
     </div>
 		
 			</div>
-			<div class="content">
+			<div class="card-content">
 				<p>新图片</p>
-				<div class="pic"><img src="../../assets/img/sav1.jpg"></div>
+				<div class="card-pic"><img src="../../assets/img/sav1.jpg"></div>
 				
 			</div>
 			
-			<div class="inp1" id="inp1"><input type="text" value="新文本" class="txt"></div>
-			<div class="inp1"><input type="text" value="2016-10-13 12:34:56" class="txt"></div>
-			<div class="inp1"><input type="checkbox" class="chk">新选择框</div>
-			<div class="inp1"><input type="text" value="@未指定用户id" class="txt"></div>
-
+			<div ng-show="a" class="card-inp1" id="inp1"><input type="text" value="新文本" class="txt" ng-click=""></div>
+			<div  ng-show="b" class="card-inp1"><input type="text" value="2016-10-13 12:34:56" class="txt"></div>
+			<div ng-show="c" class="card-inp1"><input type="checkbox" class="chk">新选择框</div>
+			<div ng-show="d" class="card-inp1"><input type="text" value="@未指定用户id" class="txt"></div>
+<!--<div ng-controller="DatepickerDemoCtrl">
     <pre>Selected date is: <em>{{dt | date:'fullDate' }}</em></pre>
 
     <div style="display:inline-block; min-height:290px;">
       <div uib-datepicker ng-model="dt" class="well well-sm" datepicker-options="options"></div>
     </div>
 
-    
-
+  </div>  
+<div ng-controller="TimepickerDemoCtrl">
   <div uib-timepicker ng-model="mytime" ng-change="changed()" show-seconds='true' hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></div>
   <pre class="alert alert-info">Time is: {{mytime| date:'yyyy-MM-dd HH:mm:ss'}}</pre>
 
+</div>-->
+  <div ng-controller="AlertDemoCtrl">
+  <script type="text/ng-template" id="alert.html">
+    <div ng-transclude></div>
+  </script>
 
-  
+  <div uib-alert ng-repeat="alert in alerts" ng-class="'alert-' + (alert.type || 'warning')" close="closeAlert($index)"><input type="text" value="新文本">{{alert.msg}}</div>
+  <button type="button" class='btn btn-default' ng-click="addAlert()">新文本</button>
+</div>
 		</div>
 
