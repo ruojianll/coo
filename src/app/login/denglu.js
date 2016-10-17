@@ -49,7 +49,7 @@ angular.module('coo').service('apiServ',function($http,environment,$q){
     }
 }).constant('environment',{
 	http:'http://10.115.19.223:8091'
-}).controller('accountServ',function($scope,$http,apiServ,environment){
+}).controller('accountServ',function($scope,$http,apiServ,environment,$state){
 	$scope.user_name="未登录";
 	$scope.denglu=function(){
 		apiServ.post('/api/account/login',{
@@ -61,7 +61,8 @@ angular.module('coo').service('apiServ',function($http,environment,$q){
 	            var user_id = data.id;
 	            var token = data.web_token;
 	            localStorage['user_id'] = user_id;
-	            localStorage['web_token'] = token
+	            localStorage['web_token'] = token;
+	            $state.go('wzy.machao')
 	        },
 	        function(err){
 	          console.log(err) 
