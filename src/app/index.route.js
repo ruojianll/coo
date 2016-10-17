@@ -6,14 +6,8 @@
     .config(routerConfig);
 
   /** @ngInject */
-<<<<<<< HEAD
-  function routerConfig($stateProvider, $urlRouterProvider){
-			$stateProvider.state('card', {
-=======
   function routerConfig($stateProvider, $urlRouterProvider) {
-
     $stateProvider.state('card', {
->>>>>>> b453f4ca72ce41e613a945ea4158da1edd829ad7
         url: '/card',
         templateUrl: 'app/card/card.html',
         controller: 'MainController',
