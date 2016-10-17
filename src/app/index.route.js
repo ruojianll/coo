@@ -26,8 +26,7 @@
       .state('wzy.noloading', {
         url: '/noloading',
         templateUrl: 'app/noloading/weidenglu.html',
-        controller: 'MainController',
-        controllerAs: 'main'
+        controller: 'noloading'
       }).state('wzy', {
         url: '/home',
         templateUrl: 'app/home/home.html',
