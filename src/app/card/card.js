@@ -1,19 +1,21 @@
- angular.module('coo')
+angular.module('coo')
 .controller('card', function ($scope) {
-	
-	
-	$scope.fn=function(){
-		var str='<div class="card-inp1"  id="inp1"><input type="text" placeholder="新文本" class="txt"></div>';
-		$('.card-pic').append(str)
+	$scope.alerts = [];
+
+	$scope.addAlert = function() {
+		$scope.alerts.push({msg: ''});
 	};
+	
+	$scope.closeAlert = function(index) {
+	    $scope.alerts.splice(index, 1);
+	};
+	
+//	$scope.fn=function(){
+//		var str='<div class="card-inp1"  id="inp1"><input type="text" placeholder="新文本" class="txt"></div>';
+//		$('.card-pic').append(str);
+//	};
+	
+	
 })
-.directive('wenben', function () {
-    return {
-        
-        restrict:'AEMC',
-			templateUrl:'app/card/wenben.card.html',
-			link:function(scope,element,attrs){
-			
-			}
-    };
-}); 
+
+

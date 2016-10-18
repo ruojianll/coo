@@ -1,6 +1,7 @@
 body,html{
 	width: 100%;
 	height: 100%;
+	
 }
 .mada{width:900px;height:100%;margin:0 auto;}
 .mada span{width:900px;height:60px;border-bottom:1px solid #666;line-height:60px;font-size:24px; display: block;float:left;}

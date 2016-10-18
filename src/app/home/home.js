@@ -1,0 +1,16 @@
+angular.module("coo").controller("won",function($scope,$state){
+	$scope.user_name="未登录";
+	$scope.show=false;
+	$scope.fn=function(){
+		if($scope.user_name=="未登录"){
+			$state.go("wzy.login")
+		}else{
+			$scope.show=true;
+			$scope.fg=function(){
+				$scope.user_name="未登录";
+				$scope.show=false;
+				$state.go("wzy.login")
+			}
+		}
+	}
+})

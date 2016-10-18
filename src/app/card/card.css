@@ -2,6 +2,11 @@
 	margin:0px;
 	padding:0px;
 }
+body {
+	width: 100%;
+	height: 100%;
+	background: url(../../assets/img/content.jpg) no-repeat;
+}
 .card-zt{
 	width:374px;
 	height:auto;
@@ -69,13 +74,16 @@
 	text-indent: 12px;
 	line-height: 27px;
 }
-.card-inp1 .txt{
+.txt{
 	outline:none;
 	border:0px;
 	background:#e2e2e2;
-	width:340px;
-	height:27px;
+	width:324px;
+	height:33px;
 	line-height:27px;
+	color: #2d392f;
+	text-indent: 12px;
+	margin-left:0px;
 	
 }
 
@@ -83,4 +91,71 @@
 	height:13px;
 	margin-top:0;
 	margin-right:6px;
+}
+.full button span {
+    background-color: limegreen;
+    border-radius: 32px;
+    color: black;
+}
+.partially button span {
+    background-color: orange;
+    border-radius: 32px;
+    color: black;
+}   
+
+.card-main{
+  	height: 100%;
+  	padding: 20px;
+}
+.card-title p{
+  	color: #3d78ae;
+    line-height: 53px;
+    font-size: 23px;
+}
+.card-main{
+  	height: 100%;
+  	padding: 20px;
+}
+.card-title p{
+  	color: #3d78ae;
+    line-height: 53px;
+    font-size: 23px;
+}
+.card-show{
+ 	display: inline-block;
+ 	white-space: nowrap;
+    margin-bottom: 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.card-canvas{
+ 	min-height: 600px;
+ 	position: relative;
+}
+#card-scroll{
+ 	position: absolute;
+    bottom: -6px;
+    left: -3px;
+ 	margin-right: 8px;
+ 	background:#ead8d6;
+ 	border-radius: 12px;
+ 	height: 12px;
+ 	z-index: 99;
+ 	width: 100%;
+ 	clear: both;
+}
+#card-box{
+ 	height: 12px;
+ 	border-radius: 12px;
+ 	background:lightpink;
+ 	position: absolute;
+ 	left: 0;
+ 	width:150px;
+ 	z-index: 999;
 }
