@@ -1,12 +1,15 @@
-<div class="zheng">
+<div class="zheng" ng-click="fl()">
 	<!--头部-->
 	<div class="header">
 		<div class="hed-l">
 			<img src="../../assets/img/logo.jpg" />
 		</div>
-		<div class="hed-r" ui-sref="wzy.login">
+		<div class="hed-r" ng-click="fn($event)">
 			<span>{{user_name}}</span>
-			<a class="glyphicon glyphicon-triangle-bottom"></a>
+			<a id="jiantou" class="glyphicon glyphicon-triangle-bottom"></a>
+			<div class="tuichu" ng-show="show">
+				<p class="t-chu" ng-click="fg()">退出</p>
+			</div>
 		</div>
 	</div>
 	<!--内容-->
