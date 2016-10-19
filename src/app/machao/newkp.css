@@ -6,12 +6,12 @@ body,html{
 .mada span{width:900px;height:60px;border-bottom:1px solid #666;line-height:60px;font-size:24px; display: block;float:left;}
 .ma-ge{width:900px;height:100%;float:left;}
 .ma-lan{width:200px;height:80px;float:left;margin-top:30px;background: #347ab6;text-align:center;color:#fff;font-size:18px;}
-.ma-lanp{width:200px;height:80px;float:left;margin-top:30px;background: #347ab6;text-align:center;color:#fff;font-size:18px;margin-left:16px;}
+.ma-lanp{width:200px;height:80px;float:left;margin-top:30px;background: #347ab6;text-align:center;color:#fff;font-size:18px;}
 .ma-lanp p{display: block;line-height:75px;font-size:25px;}
 .ma-xin{width:200px;height:80px;float:left;margin-top:30px;background: #347ab6;text-align:center;color:#fff;font-size:18px;}
 .ma-xin p{display: block;line-height:75px;font-size:25px;}
 
-
-
-
+.ma-jiayi{width:200px;height:80px;float:left;margin-top:30px;background: #347ab6;text-align:center;color:#fff;font-size:18px;margin-right:16PX;}
+.jakuandi{float:left;}
+.jakuaner{float:left;}
 
