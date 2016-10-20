@@ -1,0 +1,80 @@
+.message_right{
+	width: 225px;
+	height: 622px;
+	margin-top: 3px;
+	background: #bfbbbc;
+	float: right;
+	overflow: auto;
+	padding-bottom: 35px;
+}
+.back_blue{
+	width: 198px;
+	border-radius: 6px;
+	background: white;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+.hellow{
+	width: 198px;
+	border-radius: 6px;
+	background: #5bc0de;
+	border-top: 1px solid #80afb5;
+	border-bottom: 1px solid #80afb5;
+}
+.back_blue .hellow p{
+	margin-top: 10px;
+	font-size: 25px;
+	color: white;
+	margin-left: 13px;
+	word-wrap: break-word;
+}
+.user_name{
+	color: #3c413d;
+	font-size: 12px;
+	margin-top: 15px;
+	margin-left: 38px;
+	float: left;
+}
+.data{
+	color: #3c413d;
+	font-size: 12px;
+	float: left;
+	margin-top: 15px;
+	margin-left: 26px;
+	padding-left: 5px;
+	border-left: 1px solid #d4d2d5;
+}
+.time{
+	color: #3c413d;
+	font-size: 12px;
+	margin-left: 90px;
+}
+.message{
+	width: 197px;
+	height: 35px;
+	border: 1px solid #cdcdcb;
+	position: fixed;
+	bottom: 0px;
+	margin-left: 10px;
+	float: left;	
+}
+.message input{
+	width: 153px;
+	border-radius: 2px;
+	border:none;
+	outline: none;
+	height: 35px;
+	padding-left: 15px;
+	float: left;
+}
+.glyphicon{
+	width: 42px;
+	height: 35px;
+	background: white;
+	border: 1px solid #cdcdcb;
+	border-top: none;
+ 	float: right;
+ 	font-size: 11px;
+ 	padding-top: 12px;
+ 	padding-left: 15px;
+}

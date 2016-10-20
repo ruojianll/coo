@@ -1,0 +1,69 @@
+			#yan_div1{
+				width: 240px;
+				height: 610px;
+				float: right;
+				overflow: overlay;
+				padding: 30px 0;
+				background: #dbc1c4;
+				position: relative;
+			}
+			#yan_op{
+				width: 200px;
+				/*height: 126px;*/
+				margin: 0 auto;
+				margin-bottom: 30px;
+			}
+			#yan_hq{
+				width: 200px;
+				height: 36px;
+				position: absolute;
+				bottom: 5px;
+				margin-left: 21px;
+			}
+			#yan_te{
+				width: 155px;
+				height: 35px;
+				border: 0;
+				border-radius: 2px;
+			}
+			#yan_bttn{
+				width: 41px;
+				height: 35px;
+				border: 0;
+				background: #fff;
+				border-left: 1px solid #cccccc;
+				text-align: center;
+				line-height: 35px;
+				border-radius: 2px;
+			}
+			#yan_sp1{
+				display: block;
+				width: 195px;
+				height: 62px;
+				background: #5bc0de;
+				border-radius: 13px 13px 0 0;
+				margin: 0 auto;
+				font-size: 17px;
+				line-height: 62px;
+				color: #fff;
+				padding-left:5px;
+			}
+			#yan_sp2{
+				display: block;
+				width: 195px;
+				height: 64px;
+				background: #ffffff;
+				border-radius: 0 0 13px 13px;
+				margin: 0 auto;
+				color: #000;
+				font-size: 12px;
+				line-height: 62px;
+				padding-left: 5px;
+			}
+			.yan_name{
+				float: left;
+			}
+			#yan_right{
+				float: right;
+			}
+			

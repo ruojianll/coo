@@ -1,4 +1,4 @@
-angular.module('ui.bootstrap').controller('AlertDemoCtrl', function ($scope) {
+angular.module('coo').controller('AlertDemoCtrl', function ($scope) {
 $scope.alerts = [
 
 ];
