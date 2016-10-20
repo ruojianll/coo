@@ -8,7 +8,7 @@
   /** @ngInject */
   function routerConfig($stateProvider, $urlRouterProvider){
     $stateProvider.state('card', {
-        url: '/card',
+        url: '/card?board_id',
         templateUrl: 'app/card/card.html',
         controller: 'MainController',
         controllerAs: 'main'

@@ -1,16 +1,21 @@
+<div class="gundong">
 <div class="mada">
 	<span>个人</span>
 	<div class="ma-ge">
-		<div class="jakuandi"></div>
+		<div class="jakuandi">
+			<div class="ma-jiayi" ng-repeat="personal in board_all.personal_boards" ui-sref='card({board_id:personal.id})'>{{personal.name}}</div>
+		</div>
 		<div class="ma-lanp">
-			<p class="glyphicon glyphicon-plus" ng-click="fn()"></p>
+			<p class="glyphicon glyphicon-plus" ng-click="personal()"></p>
 		</div>
 	</div>
-	<span>1231</span>
+	<span>{{fourname}}</span>
 	<div class="ma-ge">
-		<div class="jakuaner"></div>
+		<div class="jakuaner">	
+		</div>
 		<div class="ma-xin">
-			<p class="glyphicon glyphicon-plus" ng-click="fn2()"></p>
+			<p class="glyphicon glyphicon-plus" ng-click="orgnizational()"></p>
 		</div>
 	</div>
+</div>
 </div>
