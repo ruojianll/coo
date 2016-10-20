@@ -29,6 +29,10 @@
         url: '/machao',
         templateUrl: 'app/machao/newkp.html',
         controller: 'MainController'
+        }).state('wzy.yan', {
+        url: '/yan',
+        templateUrl: 'app/lyan/liuyan.html',
+        controller: 'yan'
         })
     $urlRouterProvider.otherwise('/home/noloading');
       }
