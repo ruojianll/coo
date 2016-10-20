@@ -38,7 +38,6 @@ angular.module('coo').service('apiServ',function($http,environment,$q){
                 function(err){
                     deferred.reject(data);
                 }
-
                 );
         }
         return deferred.promise;
@@ -50,7 +49,6 @@ angular.module('coo').service('apiServ',function($http,environment,$q){
 }).constant('environment',{
 	http:'http://10.115.19.223:8091'
 }).controller('accountServ',function($scope,$http,apiServ,environment,$state){
-	$scope.user_name="未登录";
 	$scope.denglu=function(){
 		apiServ.post('/api/account/login',{
 			user_name:$scope.name,
@@ -62,6 +60,7 @@ angular.module('coo').service('apiServ',function($http,environment,$q){
 	            var token = data.web_token;
 	            localStorage['user_id'] = user_id;
 	            localStorage['web_token'] = token;
+	            localStorage['name'] = data.user_name;
 	            $state.go('wzy.machao')
 	        },
 	        function(err){
