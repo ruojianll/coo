@@ -16,7 +16,7 @@
 			#yan_hq{
 				width: 200px;
 				height: 36px;
-				position: absolute;
+				position: fixed;
 				bottom: 5px;
 				margin-left: 21px;
 			}
