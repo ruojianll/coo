@@ -38,7 +38,6 @@ angular.module('coo').service('apiServ',function($http,environment,$q){
                 function(err){
                     deferred.reject(data);
                 }
-
                 );
         }
         return deferred.promise;
