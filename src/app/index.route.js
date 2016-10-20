@@ -35,6 +35,5 @@
         controller: 'yan'
         })
     $urlRouterProvider.otherwise('/home/noloading');
-      }
-
+  }
 })();
