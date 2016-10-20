@@ -6,8 +6,7 @@
     .config(routerConfig);
 
   /** @ngInject */
-  function routerConfig($stateProvider, $urlRouterProvider) {
-
+  function routerConfig($stateProvider, $urlRouterProvider){
     $stateProvider.state('card', {
         url: '/card',
         templateUrl: 'app/card/card.html',
@@ -21,12 +20,11 @@
       .state('wzy.noloading', {
         url: '/noloading',
         templateUrl: 'app/noloading/weidenglu.html',
-        controller: 'MainController',
-        controllerAs: 'main'
+        controller: 'noloading'
       }).state('wzy', {
         url: '/home',
         templateUrl: 'app/home/home.html',
-        controller: 'accountServ'
+        controller: 'won'
       }).state('wzy.machao', {
         url: '/machao',
         templateUrl: 'app/machao/newkp.html',
