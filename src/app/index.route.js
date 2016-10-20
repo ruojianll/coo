@@ -8,10 +8,10 @@
   /** @ngInject */
   function routerConfig($stateProvider, $urlRouterProvider) {
 
-    $stateProvider.state('card', {
+    $stateProvider.state('wzy.card', {
         url: '/card',
         templateUrl: 'app/card/card.html',
-        controller: 'MainController',
+        controller: 'card',
         controllerAs: 'main'
 		}).state('wzy.login', {
         url: '/denglu',
