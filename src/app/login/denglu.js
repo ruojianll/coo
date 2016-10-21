@@ -28,6 +28,7 @@ angular.module('coo').service('apiServ',function($http,environment,$q){
         if(type === 'POST'){
             $http.post(url,data,config).then(
                 function(data){
+                
                     if (data.data.status == 'SUCCESS') {
                         deferred.resolve(data.data.data);
                     }
@@ -61,7 +62,7 @@ angular.module('coo').service('apiServ',function($http,environment,$q){
 	            localStorage['user_id'] = user_id;
 	            localStorage['web_token'] = token;
 	            localStorage['name'] = data.user_name;
-	            $state.go('wzy.machao')
+	            $state.go('wzy.machao.neto')
 	        },
 	        function(err){
 	          console.log(err) 
