@@ -5,12 +5,11 @@
     $stateProvider.state('card', {
         url: '/card?board_id',
         templateUrl: 'app/card/card.html',
-        controller: 'card',
-        controllerAs: 'main'
+        controller: 'card'
 		}).state('wzy.login', {
         url: '/denglu',
         templateUrl: 'app/login/denglu.html',
-        controller: 'accountServ',
+        controller: 'accountServ'
       })
       .state('wzy.noloading', {
         url: '/noloading',
@@ -36,8 +35,7 @@
         url: '/neto',
         templateUrl: 'app/machao/newto.html',
         controller: 'comdertyu'
-      })
-        
+      })   
     $urlRouterProvider.otherwise('/home/noloading');
   }
 })();
