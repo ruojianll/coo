@@ -6,8 +6,13 @@ body, h1, h2, h3, h4, h5, h6, hr,b , p, blockquote, dl, dt, dd, ul, ol, li, pre,
 	}
 .zheng{
 	width: 100%;
+<<<<<<< HEAD:src/app/home/home.css
 	height: 100%;
 	/*position: fixed;
+=======
+	height:100%;
+	position:fixed;
+>>>>>>> 27c32856cfcba7bceaf40794a128fbeaae103b3a:src/app/main/home.css
 	background: url(../../assets/img/content.jpg);
 <<<<<<< HEAD:src/app/home/home.css
 	*/
