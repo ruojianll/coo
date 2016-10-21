@@ -1,24 +1,24 @@
 <div class="card-main">
-	<div class="card-title">
+	<div class="bord-title">
 		<p>Welcome Board</p>
 	</div>
-	<div class="card-canvas">
-	<div class="card-show">
-		
-		<div class="card-zt">
-			
+	<div id="card-canvas">
+	<div id="card-show">
+		<div class="card-zt">		
 			<div class="card-top">
-				<p>新卡片</p>
+				<input type="text" value="新卡片" class="card-title">
 				<span class="glyphicon glyphicon-trash"></span>
 				<div  class="card-btn-group" uib-dropdown is-open="status.isopen">
       <span class="glyphicon glyphicon-plus" id="single-button" type="button" class="btn btn-primary" uib-dropdown-toggle ng-disabled="disabled"></span>
-      </button>
       <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
-        <li role="menuitem" ng-click="fn()"><a href="javascript:;">文本</a></li>
-        <li role="menuitem"><a href="javascript:;">时间</a></li>
-        <li role="menuitem"><a href="javascript:;"><option>选择框<select></select></option></a></li>
-        <li role="menuitem"><a href="javascript:;">@</a></li>
-        <li role="menuitem"><a href="javascript:;">图片</a></li>
+
+
+        <li role="menuitem"><a href="javascript:;" ng-click="addAlert()">文本</a></li>
+
+        <li role="menuitem" ng-click="time_a()"><a href="javascript:;">时间</a></li>
+        <li role="menuitem" ng-click="select()"><a href="javascript:;"><option>选择框<select></select></option></a></li>
+        <li role="menuitem" ng-click="addAlert()"><a href="javascript:;">@</a></li>
+        <li role="menuitem" ><a href="javascript:;" ng-click="fn()">图片</a></li>
           
       </ul>
     </div>
@@ -29,53 +29,71 @@
 				<div class="card-pic"><img src="../../assets/img/sav1.jpg"></div>
 				
 			
+
 			
-			<div class="card-inp1" id="inp1"><input type="text" value="新文本" class="txt"></div>
-			<div class="card-inp1"><input type="text" value="2016-10-13 12:34:56" class="txt"></div>
-			<div class="card-inp1"><input type="checkbox" class="chk">新选择框</div>
-			<div class="card-inp1"><input type="text" value="@未指定用户id" class="txt"></div>
+			<script type="text/ng-template" id="alert.html">
+						<div ng-transclude></div>
+					</script>
+					<div uib-alert style="margin-bottom: 0px; padding:10px;" ng-repeat="alert in alerts"  close="closeAlert($index)"><input type="text" placeholder="新文本" class="txt" ng-focus="focus()">
+					</div>
+					<div class='txt_time' ng-show='show_a' ng-model="date_x" ng-click="time()">{{date_x | date:'yyyy-MM-dd'}}&nbsp;&nbsp;&nbsp;&nbsp;<span ng-model="mytime">{{mytime | date:'HH:mm:ss'}}</span></div>
+					
+					<!--插件时间-->
+					<div class='time-a' ng-show="show_b">
+						<!--年，月，日-->
+					    <div class="row">					      
+					      <div class="col-md-6">
+					        <p class="input-group">
+					          <input type="text" class="form-control" uib-datepicker-popup ng-model="dt" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+					          <span class="input-group-btn">
+					            <button type="button" class="btn btn-default" ng-click="open2()"><i class="glyphicon glyphicon-calendar"></i></button>
+					          </span>
+					        </p>
+					      </div>
+					    </div>
+				    
+					    <!--小时，分，秒-->
+					    <div uib-timepicker ng-model="mytime" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></div>
+					  <pre class="alert alert-info">Time is: {{mytime | date:'shortTime' }}</pre>
+					
+					  <div class="row"> 
+					    <div class="col-xs-6">
+					        Hours step is:
+					      <select class="form-control" ng-model="hstep" ng-options="opt for opt in options.hstep"></select>
+					    </div>
+					    <div class="col-xs-6">
+					        Minutes step is:
+					      <select class="form-control" ng-model="mstep" ng-options="opt for opt in options.mstep"></select>
+					    </div>
+					  </div>
+					
+					  <hr>
+					
+					  <button type="button" class="btn btn-info" ng-click="toggleMode()">12H / 24H</button>
+					  <button type="button" class="btn btn-default" ng-click="update()">Set to 14:00</button>
+					  <button type="button" class="btn btn-danger" ng-click="clear()">Clear</button>
+					  <button type="button" class="btn btn-sm btn-info" ng-click="complete()" id="complete">Complete</button>
+				  </div>
+				  
+				  <div class="sel" ng-show="sel"><input type="checkbox"><input type="text" value="新选择框"></div>
 			
 </div>
 
-    <!--<pre>Selected date is: <em>{{dt | date:'fullDate' }}</em></pre>
-
-    <div style="display:inline-block; min-height:290px;">
-      <div uib-datepicker ng-model="dt" class="well well-sm" datepicker-options="options"></div>
-    </div>
-
-    
-
-  <div uib-timepicker ng-model="mytime" ng-change="changed()" show-seconds='true' hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></div>
-  <pre class="alert alert-info">Time is: {{mytime| date:'yyyy-MM-dd HH:mm:ss'}}</pre>-->
-
-
   
+
+</div>
+		<div class="new-card">
+			<input type="text" placeholder="添加一个新卡片" ng-model="cardname"/>
+			<button class="card-save" ng-click="save()">确定</button>
 		</div>
-		<div class="card-zt">
-			<div class="card-top">
-				<p ng-blur="change" contenteditable="true"></p>
-				<span class="glyphicon glyphicon-trash"></span>
-				<div  class="card-btn-group" uib-dropdown is-open="status.isopen">
-      <span class="glyphicon glyphicon-plus" id="single-button" type="button" class="btn btn-primary" uib-dropdown-toggle ng-disabled="disabled"></span>
-      </button>
-      <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
-        <li role="menuitem" ng-click="fn()"><a href="javascript:;">文本</a></li>
-        <li role="menuitem"><a href="javascript:;">时间</a></li>
-        <li role="menuitem"><a href="javascript:;"><option>选择框<select></select></option></a></li>
-        <li role="menuitem"><a href="javascript:;">@</a></li>
-        <li role="menuitem"><a href="javascript:;">图片</a></li>
-          
-      </ul>
-    </div>
-		
-			</div>
-		</div>
+  
 		<div style="clear: both;"></div>
 		</div>
 			
 		</div>
 		<div id="card-scroll">
-				<div id="card-box"></div>
+				<div id="card-box" ng-mousedown="down()"></div>
 			</div>
+	
 </div>
 
