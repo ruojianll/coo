@@ -29,7 +29,9 @@ angular.module('coo').controller('comdertyu',function($scope,$http,apiServ,envir
 	);
 		//点击组织用户跳转
 	$scope.orgnization_user=function(id,name){
-	    $state.go("wzy.machao.netwo",{id:id,name:name});
+	    $state.go("wzy.machao.netwo",{
+	    	id:id,name:name
+	    });
 	    $scope.$parent.orgnizationname=name;
 	}
 });
@@ -41,12 +43,12 @@ angular.module('coo').controller('comdersht',function($scope,$http,apiServ,envir
 		    board_name:$stateParams.name,
 		    orgnization_id:$stateParams.id,
 		});
-	apiServ.post('/api/board/all',{}).then(
-		function(data){
-			$scope.orgnizational_all=data;
-		},function(err){
-		}
-	);
+		apiServ.post('/api/board/all',{}).then(
+			function(data){
+				$scope.orgnizational_all=data;
+			},function(err){
+			}
+		);
 	}
 	//获取组织公告板
      apiServ.post('/api/board/all',{}).then(
