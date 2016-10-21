@@ -6,7 +6,6 @@ angular.module('coo').controller('comder',function($scope,$http,apiServ,environm
 		},function(err){
 		}
 	);
-	//添加个人的公告板
 	$scope.board_name="公告板",
 	$scope.personal=function(){
 		apiServ.post('/api/board/add',{
@@ -27,7 +26,6 @@ angular.module('coo').controller('comdertyu',function($scope,$http,apiServ,envir
 			$scope.fourname=data
 		},function(err){}
 	);
-		//点击组织用户跳转
 	$scope.orgnization_user=function(id,name){
 	    $state.go("wzy.machao.netwo",{
 	    	id:id,name:name
