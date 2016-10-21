@@ -133,7 +133,7 @@ angular.module('coo')
 	$scope.blur=function(){
 		apiServ.post('/api/account/login',{
 			card_id:72,
-			data:"{'type':text,'data':'新文本'}",
+			data:"{'type':'text','data':'新文本'}",
 			id:59
 		}).then(
 	        function(data){

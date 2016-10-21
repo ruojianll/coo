@@ -8,8 +8,10 @@ angular.module('coo').controller('MainController',function($scope,$http){
 			data:$.param($scope.data),
 			headers:{"Content-Type":"application/x-www-form-urlencoded;charset=UTF-8"}
 		}).success(function(data){
+		
 			var ma='<div class="ma-jiayi">新信息版</div>'
 			$('.ma-lanp').before(ma)
+			
 		})
 		
 	}
