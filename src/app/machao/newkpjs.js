@@ -16,6 +16,7 @@ angular.module('coo').controller('comder',function($scope,$http,apiServ,environm
 			function(data){
 				$scope.board_all=data
 			},function(err){	
+
 		})
 	}
 });

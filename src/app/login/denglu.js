@@ -56,7 +56,7 @@ angular.module('coo').service('apiServ',function($http,environment,$q){
 			password:$scope.psd
 		}).then(
 	        function(data){
-	        	 	$scope.$parent.user_name=data.user_name;
+	        	 $scope.$parent.user_name=data.user_name;
 	            var user_id = data.id;
 	            var token = data.web_token;
 	            localStorage['user_id'] = user_id;
