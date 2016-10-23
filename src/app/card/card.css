@@ -46,7 +46,7 @@ body {
 	margin-right:5px;
 }	
 .card-content{
-	height: 408px;
+	height: 422px;
 	width:100%;
 	margin-left:10px;
 	margin-top:15px;
@@ -153,6 +153,7 @@ div.row {
 .time-a {
     width: 100%;
     padding-left: 11px;
+    margin-bottom: 30px;
 }
 .card-title p {
   	color: #3d78ae;
@@ -178,7 +179,7 @@ div.row {
     /*margin-bottom: 30px;*/
     overflow-x: auto;
     overflow-y: hidden;
-    padding-bottom: 10px;
+    /*padding-bottom: 10px;*/
     position: absolute;
     top: 0;
     right: 0;
@@ -276,7 +277,7 @@ div.alert.ng-scope.ng-isolate-scope.alert-warning.alert-dismissble {
 .new-card input:hover{ 
 	background: #DCA1A3;
 }
- .card-save{
+ .new-card input.card-save{
     border: none;
     width: 60px;    
     margin-right: 4px;

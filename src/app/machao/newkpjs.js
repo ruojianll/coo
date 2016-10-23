@@ -5,12 +5,13 @@ angular.module('coo').controller('MainController',function($scope,$http,apiServ,
 		},function(err){
 		}
 	)
-	apiServ.post('/api/user/orgnization/all',{}).then(
-		function(data){
-			$scope.fourname=data[0].orgnization_name;
-		},function(err){
-		}
-	);
+//	apiServ.post('/api/user/orgnization/all',{}).then(
+//		function(data){
+//			$scope.fourname=data[0].orgnization_name;
+//			console.log(data)
+//		},function(err){
+//		}
+//	);
 	apiServ.post("/api/orgnization/user/all",{
 		 orgnization_id:"four"
 	}).then(

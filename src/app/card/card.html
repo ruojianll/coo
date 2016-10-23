@@ -1,43 +1,42 @@
 <div class="card-main">
 	<div class="card-title">
-		<p><input type='text' value='新信息板'></p>
+		<p><input type='text' ng-model="board_name"></p>
 	</div>
 	<div class="card-canvas">
 		<div class="card-show">
-			<div class="card-zt" ng-show='card_show'>
+			<div class="card-zt" ng-show='card_show'  ng-repeat="tt in card_creat">
 				<div class="card-top">
-					<p><input type='text' value='新卡片'></p>
-					
-					<!--添加，删除条目按钮，下拉列表插件-->
-					<span class="glyphicon glyphicon-trash" ng-click='del_card()' id="del_card"></span>
+					<p><input type='text' ng-model="tt.name"  class="cardName" ng-blur="card_titBlur(tt.id,$index)" ></p>					
+					<!--添加下拉列表插件，删除卡片按钮，-->
+					<span class="glyphicon glyphicon-trash" ng-click='del_card(tt.id,$index)' id="del_card"></span>
 					<div class="card-btn-group" uib-dropdown is-open="status.isopen">
 						<span class="glyphicon glyphicon-plus" id="single-button" type="button" class="btn btn-primary" uib-dropdown-toggle ng-disabled="disabled"></span>
 						<ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
 							<li role="menuitem">
-								<a href="javascript:;" ng-click="addAlert()">文本</a>
+								<a href="javascript:;" ng-click="addAlert(tt.id)">文本</a>
 							</li>
 							<li role="menuitem">
-								<a href="javascript:;" ng-click="time_a()">时间</a>
+								<a href="javascript:;" ng-click="time_a(tt.id)">时间</a>
 							</li>
 							<li role="menuitem">
-								<a href="javascript:;" ng-click="select()">
+								<a href="javascript:;" ng-click="select(tt.id)">
 									选择框<!--<option>
 										<select></select>
 									</option>-->
 								</a>
 							</li>
 							<li role="menuitem">
-								<a href="javascript:;" ng-click="addAlert()">@</a>
+								<a href="javascript:;" ng-click="addAlert(tt.id)">@</a>
 							</li>
 							<li role="menuitem">
-								<a href="javascript:;" ng-click="addAlert()">图片</a>
+								<a href="javascript:;" ng-click="addAlert(tt.id)">图片</a>
 							</li>
 						</ul>
 					</div>
 				</div>
 				<div class="card-a">
 					<div class="card-content">
-						<p><input type='text' value='新图片'></p>
+						<p><input type='text' ng-model="ss"></p>
 						<div class="card-pic"><img src="../../assets/img/sav1.jpg"></div>
 					</div>
 					
@@ -45,7 +44,7 @@
 					<script type="text" ng-template" id="alert.html">
 						<div ng-transclude></div>
 					</script>
-					<div uib-alert style="margin-bottom: 0px; padding:10px;" ng-repeat="alert in alerts"  close="closeAlert($index)"><input type="text" placeholder="新文本" class="txt" ng-blur="blur()">
+					<div uib-alert style="margin-bottom: 0px; padding:10px;" ng-repeat="alert in alerts"  close="closeAlert($index)"><input type="text" placeholder="新文本" class="txt" ng-blur="blur(tt.id,$index)">
 					</div>
 					
 					<!--显示隐藏时间-->
@@ -96,18 +95,10 @@
 				</div>				
 			</div>
 			<div class="new-card">
-				<input type="text" placeholder="添加一个新卡片" ng-click="new_m()"/>
-				<button class="card-save" ng-click="save()">保存</button>
+				<input type="text" placeholder="添加一个新卡片" ng-click="new_m()" class="card_name" required>
+				<input type='submit' class="card-save" ng-click="save()" value='保存'>
 			</div>
-	  
 			<div style="clear: both;"></div>
-		</div>
-		
-		
-
-		<!--横向滚动条,自己做-->
-		<!--<div id="card-scroll">
-			<div id="card-box"></div>
-		</div>-->
+		</div>		
 	</div>
 </div>

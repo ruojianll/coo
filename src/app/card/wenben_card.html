@@ -1,6 +1,6 @@
 			<div class="card-zt">
 				<div class="card-top">
-					<p><input type='text' value='新卡片'></p>
+					<p><input type='text' ng-model="card_title"  class="cardName" ng-blur="card_titBlur()"></p>
 					
 					<!--添加，删除条目按钮，下拉列表插件-->
 					<span class="glyphicon glyphicon-trash" ng-click='del_card()' id="del_card"></span>
