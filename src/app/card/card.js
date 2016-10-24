@@ -129,11 +129,12 @@ angular.module('coo')
 		}
 		
 	}
+	var board_id=location.href.split('=')[1]
 	apiServ.post('/api/board/get',{
-		board_id:56
+		board_id:board_id
 	}).then(
 		function(data){
-			console.log(data.data)
+			console.log(data)
 		},
 	    function(err){
 	          console.log(err) 
@@ -165,7 +166,7 @@ angular.module('coo')
 		var html='<div class="card-zt"><div class="card-top"><input type="text" value="新卡片" class="card-title"><span class="glyphicon glyphicon-trash"></span><div  class="card-btn-group" uib-dropdown is-open="status.isopen"><span class="glyphicon glyphicon-plus" id="single-button" type="button" class="btn btn-primary" uib-dropdown-toggle ng-disabled="disabled"></span> <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button"> <li role="menuitem"><a href="javascript:;" ng-click="addAlert()">文本</a></li> <li role="menuitem" ng-click="time_a()"><a href="javascript:;">时间</a></li><li role="menuitem" ng-click="select()"><a href="javascript:;"><option>选择框<select></select></option></a></li><li role="menuitem" ng-click="addAlert()"><a href="javascript:;">@</a></li><li role="menuitem" ><a href="javascript:;" ng-click="fn()">图片</a></li></ul></div></div></div>'
 		$(html).insertBefore(".new-card");
 	apiServ.post('/api/card/add',{
-		board_id:56,
+		board_id:board_id,
 		card_name:$scope.cardname
 	}).then(
 		function(data){
@@ -254,7 +255,32 @@ angular.module('coo')
 //		var str='<div class="card-inp1"  id="inp1"><input type="text" placeholder="新文本" class="txt"></div>';
 //		$('.card-pic').append(str);
 //	};	
-})
+}).directive("weiyi",function(){  
+                return{  
+                    restrict :'A',
+                    link :function(scope,element,attr){  
+                        attr.data=angular.equals(attr.data,"true");  
+                        console.log(element);  
+                        element.on("mousedown",function(e){  
+                            var that = $(this);    
+                            var x=e.clientX-$(this).offset().left;  
+                            var y=e.clientY-$(this).offset().top;  
+                            $(document).on("mousemove",function(e){  
+                             		
+                                    						that.css({"position":"absolute","left":e.clientX-x-20,"top":e.clientY-y-123});  
+                            });  
+                            $(document).on("mouseup",function(e){
+                                $(document).off(); 
+                                
+                            })  
+  
+                        })  
+                    }  
+                }  
+            }).controller('show',['$scope',function(scope$){  
+  
+                  
+            }]);   
 
 
 

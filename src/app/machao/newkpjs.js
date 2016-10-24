@@ -1,32 +1,55 @@
-
-angular.module('coo').controller('MainController',function($scope,$http){
-	$scope.data={}
-	$scope.fn=function(){
-		$http({
-			method:"POST",
-			url:"http://10.115.19.223:8091/api/board/all",
-			data:$.param($scope.data),
-			headers:{"Content-Type":"application/x-www-form-urlencoded;charset=UTF-8"}
-		}).success(function(data){
-			var ma='<div class="ma-jiayi">新信息版</div>'
-			$('.jakuandi').append(ma)
+angular.module('coo').controller('MainController',function($scope,$http,apiServ,environment){
+	apiServ.post('/api/board/all',{}).then(
+		function(data){
+			$scope.board_all=data;
+		},function(err){
+		}
+	)
+	apiServ.post('/api/user/orgnization/all',{}).then(
+		function(data){
+			$scope.fourname=data[0].orgnization_name;
+		},function(err){
+		}
+	);
+	apiServ.post("/api/orgnization/user/all",{
+		 orgnization_id:"four"
+	}).then(
+		function(data){
+			console.log(data)
+		},function(err){
+			console.log(err)
+		}
+	)
+	
+	
+	$scope.board_name="公告板",
+	$scope.personal=function(){
+		apiServ.post('/api/board/add',{
+			type:'personal',
+		    board_name:$scope.board_name
+		});
+		apiServ.post('/api/board/all',{}).then(
+			function(data){
+				$scope.board_all=data
+			},function(err){	
 		})
-		
 	}
-	$scope.fn2=function(){
-		$http({
-			method:"POST",
-			url:"http://10.115.19.223:8091/api/board/all",
-			data:$.param($scope.data),
-			headers:{"Content-Type":"application/x-www-form-urlencoded;charset=UTF-8"}
-		}).success(function(data){
-			var chao='<div class="ma-jiayi">新信息版</div>'
-			$('.jakuaner').append(chao)
-		})
-		
-			
-		
+	$scope.orgnizational=function(){
+		apiServ.post('/api/board/add',{
+			type:'orgnizational',
+		    board_name:$scope.board_name,
+		    orgnization_id:$scope.fourname
+		}).then(function(data){
+			console.log(data)
+		},function(err){
+			console.log(err)
+		}
+		)
+//		apiServ.post('/api/user/orgnization/all',{}).then(
+//			function(data){
+//				console.log(data)
+//			},function(err){	
+//				console.log(err)
+//		})
 	}
 })
-
-

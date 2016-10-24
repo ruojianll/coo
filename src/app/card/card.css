@@ -16,6 +16,10 @@
 	float: left;
 	margin-right:12px ;
 }
+.card-move{
+	position: absolute;
+	transform: rotate(5deg);
+}
 
 .card-top{
 	min-height: 64px;

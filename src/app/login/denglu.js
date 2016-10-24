@@ -1,4 +1,4 @@
-angular.module('coo').service('apiServ',function($http,environment,$q){
+angular.module('coo').service('apiServ',function($http,environment,$q,$state){
     var handle = function(url,data,type){
         url = environment.http + url;
         var deferred = $q.defer();
@@ -6,6 +6,7 @@ angular.module('coo').service('apiServ',function($http,environment,$q){
         config.headers = {};
         if(localStorage['user_id']){
             config.headers['AliceSPA-UserId'] = localStorage['user_id'];
+           
         }
         if(localStorage['web_token']){
             config.headers['AliceSPA-WebToken'] = localStorage['web_token'];
@@ -38,7 +39,6 @@ angular.module('coo').service('apiServ',function($http,environment,$q){
                 function(err){
                     deferred.reject(data);
                 }
-
                 );
         }
         return deferred.promise;
@@ -56,11 +56,10 @@ angular.module('coo').service('apiServ',function($http,environment,$q){
 			password:$scope.psd
 		}).then(
 	        function(data){
-	        	 	$scope.$parent.user_name=data.user_name;
+	        	$scope.$parent.user_name=data.user_name;
 	            var user_id = data.id;
 	            var token = data.web_token;
 	            localStorage['user_id'] = user_id;
-
 	            localStorage['web_token'] = token;
 	            localStorage['name'] = data.user_name;
 	            $state.go('wzy.machao')
