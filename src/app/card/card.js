@@ -285,6 +285,7 @@ angular.module('coo')
                                     						that.css({"position":"absolute","left":e.clientX-x-20,"top":e.clientY-y-123});  
                             });  
                             $(document).on("mouseup",function(e){
+                            	
                                 $(document).off(); 
                                 
                             })  
