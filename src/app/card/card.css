@@ -3,14 +3,25 @@
 	padding:0px;
 }
 body {
+
+	overflow: hidden;
+
 	width: 100%;
 	height: 100%;
 	background: url(../../assets/img/content.jpg) no-repeat;
 }
-.card-zt{
-	width:330px;
-	height:auto;
-	background:#ededed;
+
+.card-zt{	
+    width: 330px;
+    height: 100%;    
+    background: #ededed;
+    white-space: nowrap;
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 15px;
+    box-shadow: 2px 2px 6px #333;
+    border-radius: 15px;
 }
 .card-top{
 	height: 75px;
@@ -25,6 +36,11 @@ body {
 	margin-top:22px;
 	font-size:26px;
 }
+.card-top p input {
+	width: 200px;
+	background: none;
+	border: none;
+}
 .card-top span{
 	display: block;
 	float: right;
@@ -33,28 +49,33 @@ body {
 	margin-right:5px;
 }	
 .card-content{
-	height: 528px;
+	height: 422px;
 	width:100%;
 	margin-left:10px;
-	margin-top:19px;
+	margin-top:15px;
 	background:#e2e2e2;
 	margin-right:10px;
 	}
-.card-content p{
+.card-content p {
 	text-align: center;
 	font-size:14px;
 	padding-top:13px;
 	margin-bottom: 0px;
+	
+}
+.card-content p input {
+	text-align: center;
+    background: none;
+    border: none;
 }
 .card-pic{
-	
-	height: 485px;
+	height: 375px;
 	
 	margin: 0 10px;
 	overflow: hidden;
 }
 .card-pic img {
-	width: 97%;
+	width: 96%;
 	height: 100%;
 	background-size: 100%;
 }
@@ -134,13 +155,17 @@ div.row {
 .time-a {
     width: 100%;
     padding-left: 11px;
+    margin-bottom: 30px;
 }
-.card-title p{
+.card-title p {
   	color: #3d78ae;
     line-height: 53px;
     font-size: 23px;
 }
-
+.card-title p input {
+    background: none;
+    border: none;    
+}
 .card-main{
   	height: 100%;
   	padding-left: 20px;
@@ -153,10 +178,10 @@ div.row {
 .card-show{
  	display: inline-block;
  	white-space: nowrap;
-    margin-bottom: 30px;
+    /*margin-bottom: 30px;*/
     overflow-x: auto;
     overflow-y: hidden;
-    padding-bottom: 10px;
+    /*padding-bottom: 10px;*/
     position: absolute;
     top: 0;
     right: 0;
@@ -164,7 +189,9 @@ div.row {
     left: 0;
 }
 .card-canvas{
- 	min-height: 535px;
+	position: relative;
+    flex-grow: 1;
+ 	min-height: 525px;
  	position: relative;
 }
 #card-scroll{
@@ -194,7 +221,7 @@ div.row {
 	height: 448px;
 	overflow-y: auto;
 	overflow-x: hidden;
-	padding-bottom: 20px;
+	/*padding-bottom: 20px;*/
 }
 .alert-dismissible .close {
     position: relative;
@@ -230,3 +257,41 @@ div.alert.ng-scope.ng-isolate-scope.alert-warning.alert-dismissble {
 .alert {
 	border: none;
 }
+
+.new-card{
+ 	/*float: left;*/
+ 	height: 80px;
+ 	width: 324px;
+ 	white-space: nowrap;
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+ }
+ .new-card input{
+ 	border-radius: 5px;
+    width: 265px;
+    height: 44px;
+    border: none;
+    display: block;
+    font-size: 18px;
+    outline: none;
+    background: #e0bfc4;
+ }
+.new-card input:hover{ 
+	background: #DCA1A3;
+}
+ .new-card input.card-save{
+    border: none;
+    width: 60px;    
+    margin-right: 4px;
+    border-radius: 4px;
+    background: linear-gradient(to bottom,#61BD4F 0,#5AAC44 100%);
+    box-shadow: 0 1px 0 #3F6F21;
+    color: #fff;
+    float: left;
+    min-height: 30px;
+    height: 30px;
+    margin-top: 0;
+    padding-top: 4px;
+    padding-bottom: 4px;
+ }
