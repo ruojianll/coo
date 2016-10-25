@@ -52,7 +52,7 @@ angular.module('coo')
 		apiServ.post('/api/item/edit',{
 			board_id:board_id,
     		card_id:card_id,
-    		item_id:$(items).eq(d).id,
+    		item_id:$('.items').eq(d).id,
     		item_data:$('.txt').eq(d).val()
 		}).then(
 	        function(data){
@@ -72,7 +72,7 @@ angular.module('coo')
 		    item_id:item_id
 		}).then(
 	        function(data){
-	        	alert(333);
+	        
 	        	$scope.alerts.splice(index, 1);
 	        	console.log(data)
 	        },
