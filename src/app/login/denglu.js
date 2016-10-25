@@ -65,7 +65,7 @@ angular.module('coo').service('apiServ',function($http,environment,$q,$state){
 	            localStorage['user_id'] = user_id;
 	            localStorage['web_token'] = token;
 	            localStorage['name'] = data.user_name;
-
+				localStorage['pwd'] = $scope.psd
 	            $state.go('wzy.machao.neto')
 
 	        },

@@ -15,8 +15,12 @@ angular.module("coo").controller("won",function($scope,$state,$stateParams){
 			$scope.fg=function(){
 				$scope.user_name="未登录";
 				$scope.show=false;
+				delete localStorage['name'];
+				delete localStorage['pwd'];
+				delete localStorage['user_id'];
+				delete localStorage['web_token']
 				$state.go("wzy.login")
-				 delete localStorage['name']
+				 
 			}
 			
 		}
