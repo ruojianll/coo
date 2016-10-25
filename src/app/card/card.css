@@ -296,3 +296,9 @@ div.alert.ng-scope.ng-isolate-scope.alert-warning.alert-dismissble {
     padding-top: 4px;
     padding-bottom: 4px;
  }
+ #bord-dele{
+ 	float: right;
+ 	margin-right: 30px;
+ 	margin-top: 20px;
+ 	cursor: pointer;
+ }

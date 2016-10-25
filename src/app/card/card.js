@@ -1,5 +1,25 @@
 angular.module('coo')
 .controller('card', function ($scope,$http,apiServ,environment,$state,$log,$compile) {
+	
+	//删除bord
+	$scope.delBord = function(){
+
+		r=confirm('您是要删除这个公告板吗？')
+							if(r==true){
+								apiServ.post('/api/board/delete',{
+									    board_id:board_id
+									}).then(
+								        function(data){
+								        	$state.go('wzy.machao.neto')
+								        },
+								        function(err){
+								        	console.log(err) 
+								        }
+								    )
+							}else{
+								
+							}
+	}
 	$scope.card_show=true;
 	//删除新卡片     只可以删除最开始的那个         
 //	$scope.del_card=function(){
