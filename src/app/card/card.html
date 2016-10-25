@@ -1,6 +1,8 @@
 <div class="card-main">
+<!--	<div ng-bind-html="html"></div>-->
 	<div class="card-title">
-		<p><input type='text' ng-model="board_name"></p>
+		<p><input type='text' ng-model="board_name" id="boardName" ng-blur="boardName()"><span id="bord-dele" class="glyphicon glyphicon-remove" ng-click="delBord()"></span>
+</p>
 	</div>
 	<div class="card-canvas">
 		<div class="card-show">
@@ -39,19 +41,18 @@
 						<p><input type='text' ng-model="ss"></p>
 						<div class="card-pic"><img src="../../assets/img/sav1.jpg"></div>
 					</div>
-					
-					<!--添加新文本input text-->
-					<script type="text" ng-template" id="alert.html">
-						<div ng-transclude></div>
-					</script>
-					<div uib-alert style="margin-bottom: 0px; padding:10px;" ng-repeat="alert in alerts"  close="closeAlert($index)"><input type="text" placeholder="新文本" class="txt" ng-blur="blur(tt.id,$index)">
+					<!--添加新条目-->
+					<div ng-repeat="rr in tt.item_new"  class="item">
+						<input type="text" class="txt" ng-blur="blur($event,tt.id,rr.id)" ng-model="rr.dataJson[0].data">
+						<button  type="button" class="close" ng-click="closeAlert(tt.id,rr.id)">
+						    <span>×</span>
+		    			</button>
 					</div>
-					
 					<!--显示隐藏时间-->
-					<div class='txt_time' ng-show='show_a' ng-model="date_x" ng-click="time()">{{date_x | date:'yyyy-MM-dd'}}&nbsp;&nbsp;&nbsp;&nbsp;<span ng-model="mytime">{{mytime | date:'HH:mm:ss'}}</span></div>
+					<div class='txt_time' ng-show='show_a'  ng-click="time($index)"><span ng-model="dt">{{dt | date:'yyyy-MM-dd'}}</span>&nbsp;&nbsp;&nbsp;&nbsp;<span ng-model="mytime">{{mytime | date:'HH:mm:ss'}}</span></div>
 					
 					<!--插件时间-->
-					<div class='time-a' ng-show="show_b">
+					<div class='time-a'>
 						<!--年，月，日-->
 					    <div class="row">					      
 					      	<div class="col-md-6">
@@ -84,18 +85,18 @@
 					  	<button type="button" class="btn btn-info" ng-click="toggleMode()">12H / 24H</button>
 					  <!--<button type="button" class="btn btn-default" ng-click="update()">Set to 14:00</button>-->
 					  	<button type="button" class="btn btn-danger" ng-click="clear()">Clear</button>
-					  	<button type="button" class="btn btn-sm btn-info" ng-click="complete()" id="complete">Complete</button>
+					  	<button type="button" class="btn btn-sm btn-info" ng-click="complete(tt.id,$index)" id="complete">Complete</button>
 				  	</div>
 				  	
 				  	<!--新选择框-->
 				  	<div class="sel" ng-show="sel">
-				  		<input type="checkbox">
+				  		<input type="checkbox" ng-checked="sel_che" ng-click="check()">
 				  		<input type="text" value="新选择框">
 				  	</div>
 				</div>				
 			</div>
 			<div class="new-card">
-				<input type="text" placeholder="添加一个新卡片" ng-click="new_m()" class="card_name" required>
+				<input type="text" placeholder="添加一个新卡片" ng-click="new_m(tt.id,$event)" class="card_name" required>
 				<input type='submit' class="card-save" ng-click="save()" value='保存'>
 			</div>
 			<div style="clear: both;"></div>

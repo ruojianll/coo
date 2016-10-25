@@ -1,10 +1,4 @@
-(function() {
-  'use strict';
-
-  angular
-    .module('coo')
-    .config(routerConfig);
-
+(function() {'use strict'; angular.module('coo').config(routerConfig);
   /** @ngInject */
 
 
@@ -16,7 +10,7 @@
 			}).state('wzy.login', {
         url: '/denglu',
         templateUrl: 'app/login/denglu.html',
-        controller: 'accountServ',
+        controller: 'accountServ'
       })
       .state('wzy.noloading', {
         url: '/noloading',
@@ -29,12 +23,20 @@
       }).state('wzy.machao', {
         url: '/machao',
         templateUrl: 'app/machao/newkp.html',
-        controller: 'MainController'
-        }).state('wzy.yan', {
+        controller: 'comder'
+      }).state('wzy.yan', {
         url: '/yan',
         templateUrl: 'app/lyan/liuyan.html',
         controller: 'yan'
-        })
+      }).state('wzy.machao.netwo', {
+        url: '/netwo?id&name',
+        templateUrl: 'app/machao/netwo.html',
+        controller: 'comdersht'
+      }).state('wzy.machao.neto', {
+        url: '/neto',
+        templateUrl: 'app/machao/newto.html',
+        controller: 'comdertyu'
+      })   
     $urlRouterProvider.otherwise('/home/noloading');
   }
 })();
