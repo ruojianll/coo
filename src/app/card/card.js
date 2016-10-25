@@ -1,25 +1,6 @@
 angular.module('coo')
-.controller('card', function ($scope,$http,apiServ,environment,$state,$log,$compile) {
-	
-	//删除bord
-	$scope.delBord = function(){
 
-		r=confirm('您是要删除这个公告板吗？')
-							if(r==true){
-								apiServ.post('/api/board/delete',{
-									    board_id:board_id
-									}).then(
-								        function(data){
-								        	$state.go('wzy.machao.neto')
-								        },
-								        function(err){
-								        	console.log(err) 
-								        }
-								    )
-							}else{
-								
-							}
-	}
+.controller('card', function ($scope,$http,apiServ,environment,$state,$log,$compile) {
 	$scope.card_show=true;
 	//删除新卡片     只可以删除最开始的那个         
 //	$scope.del_card=function(){
@@ -243,7 +224,6 @@ angular.module('coo')
 		}).then(
 	        function(data){
 				get_board()
-				$('.card_name').val('')
 	        	console.log(data)
 	        },
 	        function(err){
@@ -290,33 +270,7 @@ angular.module('coo')
 	}
 	
 	
-}).directive("weiyi",function(){  
-                return{  
-                    restrict :'A',
-                    link :function(scope,element,attr){  
-                        attr.data=angular.equals(attr.data,"true");  
-                        console.log(element);  
-                        element.on("mousedown",function(e){  
-                            var that = $(this);    
-                            var x=e.clientX-$(this).offset().left;  
-                            var y=e.clientY-$(this).offset().top;  
-                            $(document).on("mousemove",function(e){  
-                             		
-                                    						that.css({"position":"absolute","left":e.clientX-x-20,"top":e.clientY-y-123});  
-                            });  
-                            $(document).on("mouseup",function(e){
-                            	
-                                $(document).off(); 
-                                
-                            })  
-  
-                        })  
-                    }  
-                }  
-            }).controller('show',['$scope',function(scope$){  
-  
-                  
-            }]);  
+})
 
 //	        	var html = '<hello></hello>';
 //	        	var content = $compile(html)($scope);//在angular中给动态创建的元素编译，让创建的ng都可以使用
@@ -341,6 +295,5 @@ angular.module('coo')
 //		//字符串以"结尾，去掉"
 //		itemText=itemText.substr(0,itemText.length-2)
 //		}
-
 
 
