@@ -1,6 +1,20 @@
 angular.module('coo')
 .controller('card', function ($scope,$http,apiServ,environment,$state,$log,$compile) {
-	
+	//编辑bordname
+	$scope.bordName = function(){
+		
+		apiServ.post('/api/board/edit/title',{
+									    board_id:board_id,
+									    board_name:$('#bordName').val()
+									}).then(
+								        function(data){
+								        	console.log(data)
+								        },
+								        function(err){
+								        	console.log(err) 
+								        }
+								    )
+	}
 	//删除bord
 	$scope.delBord = function(){
 

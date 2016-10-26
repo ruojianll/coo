@@ -1,6 +1,6 @@
 <div class="card-main">
 	<div class="card-title">
-		<p><input type='text' ng-model="board_name"><span id="bord-dele" class="glyphicon glyphicon-remove" ng-click="delBord()"></span></p>
+		<p><input type='text' ng-model="board_name" ng-blur="bordName()" id="bordName"><span id="bord-dele" class="glyphicon glyphicon-remove" ng-click="delBord()"></span></p>
 	</div>
 	<div class="card-canvas">
 		<div class="card-show">
