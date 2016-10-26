@@ -5,7 +5,6 @@ angular.module("coo").controller("noloading",function($scope,$state,$http){
 	}else{
 		$scope.nologin="您已登录 。";
 		$scope.nologinNo=""
-		$scope.denglu=function(){
 		apiServ.post('/api/account/login',{
 			user_name:localStorage.name,
 			password:localStorage.pwd
@@ -26,7 +25,7 @@ angular.module("coo").controller("noloading",function($scope,$state,$http){
 	          console.log(err) 
 	        }
 	    )
-	}
+	
 		
 	}
 })
