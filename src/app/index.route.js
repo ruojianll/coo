@@ -1,13 +1,12 @@
 (function() {'use strict'; angular.module('coo').config(routerConfig);
   /** @ngInject */
 
-
   function routerConfig($stateProvider, $urlRouterProvider) {
     $stateProvider.state('wzy.card', {
         url: '/card?board_id',
         templateUrl: 'app/card/card.html',
         controller: 'card'
-			}).state('wzy.login', {
+		}).state('wzy.login', {
         url: '/denglu',
         templateUrl: 'app/login/denglu.html',
         controller: 'accountServ'

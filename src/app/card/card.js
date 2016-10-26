@@ -1,10 +1,39 @@
 angular.module('coo')
 .controller('card', function ($scope,$http,apiServ,environment,$state,$log,$compile,$sce) {
+//	var t = new Date();
+//	var strt = moment(t).format();
+//	var objt = moment(strt).toDate();
+//	
+//	console.log(moment().format('MMMM --- mm'));
 //	alert(angular.fromJson('{"type":"text"}')) //AngularJs的angular.fromJson()方法可以把一个Json字符串中解析成一个对象,或对象数组
 //	$scope.html = $sce.trustAsHtml('<input type="checkbox" ><span>新选择框</span>');
 //获取当前board板的board_id
 	url=window.location.href;
 	board_id=url.split('=')[1];
+//	apiServ.post('/api/user/orgnization/all',{
+//			
+//		}).then(
+//	        function(data){
+//	        	console.log(data)
+//	        	$scope.orgnization_id=data.orgnization_id;
+//	        },
+//	        function(err){
+//	        	console.log(err) 
+//	        }
+//	    )
+//	//获取组织下所有用户
+//		apiServ.post('/api/orgnization/user/all',{
+//			orgnization_id:$scope.orgnization_id
+//		}).then(
+//	        function(data){
+//	        	console.log(data)
+//	        	console.log(data.user_name)
+//	        	console.log(data.id)
+//	        },
+//	        function(err){
+//	        	console.log(err) 
+//	        }
+//	    )
 	
 	//获取公告板
 	function get_board(){
@@ -12,6 +41,7 @@ angular.module('coo')
 			board_id:board_id
 		}).then(
 		    function(data){
+		    	$scope.relative_id=data.relative_id;
 				$scope.board_name=data.name;
 				$scope.card_creat=data.cards;
 				for(var i=0;i<data.cards.length;i++){
@@ -45,8 +75,9 @@ angular.module('coo')
 						if(data.cards[t].items[r].dataJson[0].type=='time'){
 							$scope.show_a=true;
 							time_id=data.cards[t].items[r].id;
-//							$scope.dt=data.cards[t].items[r].dataJson[0].data[0];
-//							$scope.mytime=data.cards[t].items[r].dataJson[0].data[1];
+//							$scope.dt=moment(data.cards[t].items[r].dataJson[0].data).toDate();
+//							$scope.dt=moment(data.cards[t].items[r].dataJson[0].data[0]+data.cards[t].items[r].dataJson[0].data[1]).toDate();
+//							$scope.mytime=moment(data.cards[t].items[r].dataJson[0].data[0]+data.cards[t].items[r].dataJson[0].data[1]).toDate();
 						}
 						if(data.cards[t].items[r].dataJson[0].type=='checkbox'){
 							$scope.sel=true;
@@ -66,8 +97,7 @@ angular.module('coo')
 	get_board()
 	$scope.card_show=true;
 	$scope.sel_che=false;
-	$scope.dt=new Date();
- 	$scope.mytime = new Date();
+	
 	//添加新文本,添加条目
 	$scope.alerts = [];
 	$scope.addAlert = function(card_id) {
@@ -98,27 +128,6 @@ angular.module('coo')
     		item_data:angular.toJson({'type':'text','data':event.target.value})
 		}).then(
 	        function(data){
-	        	apiServ.post('/api/board/get',{
-					board_id:board_id
-				}).then(
-				    function(data){
-						for(var t=0;t<data.cards.length;t++){
-							data.cards[t].item_new=[];
-							for(var r=0;r<data.cards[t].items.length;r++){
-								if(data.cards[t].items[r].dataJson[0].type=='time'){
-									$scope.show_a=true;
-									time_id=data.cards[t].items[r].id;
-									$scope.dt=data.cards[t].items[r].dataJson[0].data[0];
-									$scope.mytime=data.cards[t].items[r].dataJson[0].data[1];
-								}
-							}
-						}
-				        console.log(data)
-				    },
-				    function(err){
-				        console.log(err) 
-				    }
-				)
 	        	console.log(data)
 	        },
 	        function(err){
@@ -141,8 +150,6 @@ angular.module('coo')
 	          	console.log(err) 
 	        }
 	    )
-//	    $scope.alerts.splice(index, 1);
-
 	};
 //	添加，显示选择框
 	$scope.select = function(card_id) {
@@ -162,10 +169,10 @@ angular.module('coo')
 	        	console.log(err) 
 	        }
 	    )
-//	    $scope.sel=true;
 	};
 	//编辑选择框
 	$scope.new_m=function(card_id,event){
+		alert(111)
 		apiServ.post('/api/item/edit',{
 			board_id:board_id,
     		card_id:card_id,
@@ -202,10 +209,11 @@ angular.module('coo')
 	}
  	$scope.show_a=false;//隐藏时间框
  	$scope.show_b=false;//隐藏时间插件
+ 	$scope.dt=new Date();
  	
 // 	添加，显示时间框
 	$scope.time_a=function(card_id,index){
-		var item_dataA={'type':'time','data':[$('.txt_time').eq(index).find('span:eq(0)').html(),$('.txt_time').eq(index).find('span:eq(1)').html()]}
+		var item_dataA={'type':'time','data':$('.txt_time').eq(index).html()}
 		item_dataA = angular.toJson(item_dataA);//自动转换成对象
 		apiServ.post('/api/item/add',{
 			card_id:card_id,
@@ -303,7 +311,7 @@ angular.module('coo')
 	    	var d = new Date();
 	    	d.setHours( 14 );
 	    	d.setMinutes( 0 );
-	    	$scope.mytime = d;
+	    	$scope.dt = d;
 	  	};
 	
 	  	$scope.clear = function() {
@@ -314,7 +322,7 @@ angular.module('coo')
 //	  	编辑时间,完成
 		$scope.complete=function(card_id,index){
 //			console.log($('.txt_time').eq(index).find('span:eq(1)').html())
-			var item_dataC={'type':'time','data':[$('.txt_time').eq(index).find('span:eq(0)').html(),$('.txt_time').eq(index).find('span:eq(1)').html()]}
+			var item_dataC={'type':'time','data':$('.txt_time').eq(index).html()}
 //			[$('.txt_time').eq(index).find('span:eq(0)').html(),$('.txt_time').eq(index).find('span:eq(1)').html()]
 			item_dataC = angular.toJson(item_dataC);//自动转换成对象
 			apiServ.post('/api/item/edit',{
@@ -324,16 +332,41 @@ angular.module('coo')
 	    		item_data:item_dataC
 			}).then(
 		        function(data){
-		        	get_board()
-		        	console.log(data)
-		        },
-		        function(err){
-		          	console.log(err) 
-		        }
-		    )
+		        	apiServ.post('/api/board/get',{
+						board_id:board_id
+					}).then(
+					    function(data){
+							for(var t=0;t<data.cards.length;t++){
+								data.cards[t].item_new=[];
+								for(var r=0;r<data.cards[t].items.length;r++){
+									if(data.cards[t].items[r].dataJson[0].type=='time'){
+										$scope.show_a=true;
+										time_id=data.cards[t].items[r].id;
+										$scope.dt=moment(data.cards[t].items[r].dataJson[0].data).toDate();
+//										$scope.mytime=moment(data.cards[t].items[r].dataJson[0].data[1]).toDate();
+									}
+								}
+							}
+					        console.log(data)
+					    },
+					    function(err){
+					        console.log(err) 
+					    }
+					)
+			        	console.log(data)
+			        },
+			        function(err){
+			          	console.log(err) 
+			        }
+			    )
 		  	$('.txt_time').eq(index).next().css('display','none')
 		}
 		
+	}
+	
+	//添加显示  @框
+	$scope.add_aite=function(index){
+		$('.aite').eq(index).css('display','block')
 	}
 	
 	//添加卡片
@@ -345,8 +378,6 @@ angular.module('coo')
 		}).then(
 	        function(data){
 				get_board()
-//				$scope.show_a=false;
-//				$scope.sel=false;
 	        	console.log(data)
 	        },
 	        function(err){

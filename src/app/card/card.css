@@ -21,10 +21,11 @@ body {
     vertical-align: top;
     margin-right: 15px;
     box-shadow: 2px 2px 6px #333;
-    border-radius: 15px;
+    border-radius: 8px;
+    z-index: 9999;
 }
 .card-top{
-	height: 75px;
+	height: 64px;
 	border-bottom:2px solid #dddddd;
 	position: relative;
 	
@@ -42,7 +43,6 @@ body {
  	margin-top: 20px;
  	cursor: pointer;
  }
-
 .card-top p input {
 	width: 200px;
 	background: none;
@@ -310,4 +310,24 @@ div.alert.ng-scope.ng-isolate-scope.alert-warning.alert-dismissble {
     top: -25px;
     right: 5px;
     color: inherit;
+}
+.aite {
+	outline: 10px solid #fcf8e3;
+	background: #e2e2e2;
+    width: 345px;
+    height: 33px;
+    line-height: 27px;
+    color: #2d392f;
+    text-indent: 12px;
+    margin: 10px;
+    display: none;
+}
+.aite span{
+	color: blue;
+}
+.aite input{
+	outline: none;
+	border: 0px;
+	 background: #e2e2e2;
+	 margin-right: 5px;
 }
