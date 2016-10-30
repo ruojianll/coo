@@ -1,4 +1,4 @@
-angular.module("coo").controller("noloading",function($scope,$state,$http){
+angular.module("coo").controller("noloading",function($scope,$state,$http,apiServ){
 	 if(localStorage.getItem("name")==null||localStorage.getItem("name")==""){
 		$scope.nologin="您暂未登录 ，";
 		$scope.nologinNo="请登录"

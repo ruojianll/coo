@@ -1,18 +1,14 @@
 angular.module('coo').controller('comder',function($scope,$http,apiServ,environment,$state,$stateParams){
-	//获取个人公告板
+	//获取所有公告板
 	apiServ.post('/api/board/all',{}).then(
 		function(data){
-			$scope.board_all=data;
+			$scope.board_all=data;//personal_boards:[],orgnization_boards:[]
+    
 		},function(err){
 		}
 	)
-//	apiServ.post('/api/user/orgnization/all',{}).then(
-//		function(data){
-//			$scope.fourname=data[0].orgnization_name;
-//			console.log(data)
-//		},function(err){
-//		}
-//	);
+	
+	//获取组织下所有用户
 	apiServ.post("/api/orgnization/user/all",{
 		 orgnization_id:"four"
 	}).then(

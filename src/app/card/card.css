@@ -10,7 +10,9 @@ body {
 	height: 100%;
 	background: url(../../assets/img/content.jpg) no-repeat;
 }
-
+.card-zt:hover{
+         box-shadow: 4px 4px 7px rgba(0,0,0,0.8) !important;
+}
 .card-zt{	
     width: 330px;
     height: 100%;    
@@ -25,10 +27,10 @@ body {
     z-index: 9999;
 }
 .card-top{
-	height: 64px;
+	height: 76px;
 	border-bottom:2px solid #dddddd;
 	position: relative;
-	
+	margin-bottom: 20px;
 }
 .card-top p{
 	display: inline-block;
@@ -109,16 +111,10 @@ body {
 	line-height: 27px;
 }
 .txt{
-	outline: 10px solid #fcf8e3;
+	width: 255px;
 	border:0px;
 	background: #e2e2e2;
-	width: 345px;
-	height:33px;
-	line-height:27px;
 	color: #2d392f;
-	text-indent: 12px;
-	margin-left:10px;
-	display: inline-block;
 }
 .item {
 	margin-bottom: 10px;
@@ -233,11 +229,21 @@ div.row {
 	overflow-x: hidden;
 	/*padding-bottom: 20px;*/
 }
+.add-item {
+	padding: 10px;
+	width:295px;
+	display:inline-block;
+	background:#e2e2e2;
+	margin-left:10px;
+	margin-right:10px;
+	margin-bottom:10px;
+}
 .alert-dismissible .close {
     position: relative;
     top: 5px;
     right: 5px;
     color: inherit;
+    
 }
 p.input-group {
 	width: 317px;
@@ -305,29 +311,44 @@ div.alert.ng-scope.ng-isolate-scope.alert-warning.alert-dismissble {
     padding-top: 4px;
     padding-bottom: 4px;
  }
-.close {
-	position: relative;
-    top: -25px;
-    right: 5px;
-    color: inherit;
-}
 .aite {
-	outline: 10px solid #fcf8e3;
 	background: #e2e2e2;
-    width: 345px;
-    height: 33px;
-    line-height: 27px;
-    color: #2d392f;
-    text-indent: 12px;
-    margin: 10px;
-    display: none;
+    position: relative;
+    /*display: none;*/
 }
-.aite span{
+.aite-span {
 	color: blue;
+	display: inline-block;
+	width: 50px;
 }
-.aite input{
+.aite b {
+	color: blue;
+    display: inline-block;
+    width: 195px;
+    overflow: hidden;
+    line-height: inherit;
+    word-wrap: break-word;
+}
+.aite input {
 	outline: none;
 	border: 0px;
-	 background: #e2e2e2;
-	 margin-right: 5px;
+	background: #e2e2e2;
+	margin-right: 5px;
+}
+.aite ul {
+	width: 100%;
+	height: auto;
+	position: absolute;
+	z-index: 9999;
+	top: 0px;
+	left: 20px;
+	background: #DBC1C4;
+	top: 2px;
+    left: 30px;
+    background: #DBC1C4;
+    border-radius: 5px;
+}
+.aite ul li {
+	height: 20px;
+	line-height: 20px;
 }

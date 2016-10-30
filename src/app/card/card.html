@@ -10,7 +10,7 @@
 				<div class="card-top">
 					<p><input type='text' ng-model="tt.name"  class="cardName" ng-blur="card_titBlur(tt.id,$index)" ></p>					
 					<!--添加下拉列表插件，删除卡片按钮，-->
-					<span class="glyphicon glyphicon-trash" ng-click='del_card(tt.id,$index)' id="del_card"></span>
+					<span class="glyphicon glyphicon-trash" ng-click='del_card(tt.id)' id="del_card"></span>
 					<div class="card-btn-group" uib-dropdown is-open="status.isopen">
 						<span class="glyphicon glyphicon-plus" id="single-button" type="button" class="btn btn-primary" uib-dropdown-toggle ng-disabled="disabled"></span>
 						<ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
@@ -28,82 +28,72 @@
 								</a>
 							</li>
 							<li role="menuitem">
-								<a href="javascript:;" ng-click="add_aite($index)">@</a>
+								<a href="javascript:;" ng-click="add_aite(tt.id)">@</a>
 							</li>
 							<li role="menuitem">
-								<a href="javascript:;" ng-click="addAlert(tt.id)">图片</a>
+								<a href="javascript:;" ng-click="addImage(tt.id)">图片</a>
 							</li>
 						</ul>
 					</div>
 				</div>
-				<div class="card-a">
-					<div class="card-content">
-						<p><input type='text' ng-model="ss"></p>
-						<div class="card-pic"><img src="../../assets/img/sav1.jpg"></div>
-					</div>
+				<div class="card-a" >
 					<!--添加新条目-->
-					
-					<div ng-repeat="rr in tt.item_new"  class="item">
-						
-						<input type="text" class="txt" ng-blur="blur($event,tt.id,rr.id)" ng-model="rr.dataJson[0].data">
-						<button  type="button" class="close" ng-click="closeAlert(tt.id,rr.id)">
-						    <span>×</span>
-		    			</button>
+					<div ng-repeat="rr in tt.items">
+						<span class="add-item">
+							<div ng-if="rr.dataJson[0].type=='image'">
+			                    <div>
+			                        <div style="text-align:center;">{{rr.dataJson[0].data.title}}</div>
+			                        <img ng-src="{{rr.dataJson[0].data.dataUrl}}" style="width:100%;"></img>
+			                    </div>
+			                    <div>
+			                        <input ng-model="rr.dataJson[0].data.title" class="form-control" style="width:100%">
+			                        <div style="display:block;" class="btn btn-default" ngf-select="readItemImage($file,rr)" ng-model="file" ngf-max-size="500KB"
+			                            >选择图片(500KB以内)</div>
+			                        <img ng-src="{{rr.dataJson[0].data.dataUrl}}" style="width:100%;"></img>
+			                    </div>
+		                	</div>
+							<div ng-if="rr.dataJson[0].type=='text'">
+								<input type="text" class="txt" ng-blur="blur($event,tt.id,rr.id)" ng-model="rr.dataJson[0].data">
+								<button  type="button" class="close" ng-click="closeAlert(tt.id,rr.id)">
+								    <span>×</span>
+				    			</button>
+							</div>
+							<div ng-if="rr.dataJson[0].type=='checkbox'" ">
+								<input type="checkbox" ng-checked="rr.dataJson[0].data.checked" ng-model="rr.dataJson[0].data.checked" ng-change="check(tt.id,$event,rr.id,rr.dataJson[0].data.checked)">
+						  		<input style="border:none;background:#e2e2e2" type="text" ng-model="rr.dataJson[0].data.text">
+						  		<button  type="button" class="close" ng-click="closeAlert(tt.id,rr.id)">
+								    <span>×</span>
+				    			</button>
+			                </div>
+			                <div ng-if="rr.dataJson[0].type=='at'" class="aite">
+			                    <span class="aite-span" ng-click="aite($event)">@用户名</span>
+						  		<b ng-model="rr.dataJson[0].data">{{rr.dataJson[0].data}}</b>
+						  		<ul style="display: none;"><li ng-click="selName(index,$event,tt.id,rr.id)" ng-repeat="d in atName">{{d.name}}</li></ul>
+						  		<button  type="button" class="close" ng-click="closeAlert(tt.id,rr.id)">
+								    <span>×</span>
+				    			</button>
+			                </div>
+							<!--<div class='txt_time' ng-show='show_a'  ng-click="time($index)" ng-model="dt">{{dt | date:'yyyy-MM-dd HH:mm:ss'}}</div>
+							
+						  	<div class="sel" ng-show="sel">
+						  		<input type="checkbox" ng-checked="sel_che" ng-model="sel_che" ng-change="check(tt.id,$event)">
+						  		<input type="text" ng-model="新选择框">
+						  	</div>
+						  	
+						  	<div class="aite" ng-show="at">
+						  		<span ng-click="aite()">@用户名</span>
+						  		<b ng-model="yonghu">{{yonghu}}</b>
+						  		<ul ng-show="attn"><li ng-click="selName(index,$event,tt.id)" ng-repeat="d in atName">{{d.name}}</li></ul>
+						  		<button  type="button" class="closeA" ng-click="closeAlert(tt.id,rr.id)">
+								    <span>×</span>
+				    			</button>
+						  	</div>-->
+						</span>  
 					</div>
-					<!--显示隐藏时间-->
-					<div class='txt_time' ng-show='show_a'  ng-click="time($index)" ng-model="dt">{{dt | date:'yyyy-MM-dd HH:mm:ss'}}</div>
-					
-					<!--插件时间-->
-					<div class='time-a'>
-						<!--年，月，日-->
-					    <div class="row">					      
-					      	<div class="col-md-6">
-					        	<p class="input-group">
-					          		<input type="text" class="form-control" uib-datepicker-popup ng-model="dt" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
-					          		<span class="input-group-btn">
-					            		<button type="button" class="btn btn-default" ng-click="open2()"><i class="glyphicon glyphicon-calendar"></i></button>
-					          		</span>
-					        	</p>
-					      	</div>
-					    </div>
-				    
-					    <!--小时，分，秒-->
-					    <div uib-timepicker ng-model="mytime" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></div>
-					  	<pre class="alert alert-info">Time is: {{dt | date:'shortTime' }}</pre>
-					
-					  	<div class="row"> 
-					    	<div class="col-xs-6">
-					        	Hours step is:
-					      		<select class="form-control" ng-model="hstep" ng-options="opt for opt in options.hstep"></select>
-					    	</div>
-					    	<div class="col-xs-6">
-					       	 	Minutes step is:
-					      		<select class="form-control" ng-model="mstep" ng-options="opt for opt in options.mstep"></select>
-					    	</div>
-					  	</div>
-					
-					  	<hr>
-					
-					  	<button type="button" class="btn btn-info" ng-click="toggleMode()">12H / 24H</button>
-					  <!--<button type="button" class="btn btn-default" ng-click="update()">Set to 14:00</button>-->
-					  	<button type="button" class="btn btn-danger" ng-click="clear()">Clear</button>
-					  	<button type="button" class="btn btn-sm btn-info" ng-click="complete(tt.id,$index)" id="complete">Complete</button>
-				  	</div>
-				  	
-				  	<!--新选择框-->
-				  	<div class="sel" ng-show="sel">
-				  		<input type="checkbox" ng-checked="sel_che" ng-click="check()">
-				  		<input type="text" value="新选择框">
-				  	</div>
-				  	<!--@框-->
-				  	<div class="aite"  ng-click="aite()">
-				  		<span>@</span>
-				  		<input type="text">				  		
-				  	</div>
 				</div>				
 			</div>
 			<div class="new-card">
-				<input type="text" placeholder="添加一个新卡片" ng-click="new_m(tt.id,$event)" class="card_name" required>
+				<input type="text" placeholder="添加一个新卡片"  class="card_name" required>
 				<input type='submit' class="card-save" ng-click="save()" value='保存'>
 			</div>
 			<div style="clear: both;"></div>

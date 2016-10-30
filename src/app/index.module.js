@@ -2,6 +2,6 @@
   'use strict';
 
   angular
-    .module('coo', ['ui.router', 'ui.bootstrap', 'toastr']);
+    .module('coo', ['ui.router', 'ui.bootstrap', 'toastr','ngFileUpload']);
 
 })();
