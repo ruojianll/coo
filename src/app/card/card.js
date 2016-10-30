@@ -77,7 +77,7 @@ angular.module('coo')
 	$scope.at=false;
 	$scope.show_a=false;//隐藏时间框
  	$scope.show_b=false;//隐藏时间插件
- 	$scope.dt=new Date();
+ 	$scope.dd=new Date();
 	//添加新文本,添加条目
 	$scope.addAlert = function(card_id) {
 		var item_data={type:"text",data:""};
@@ -161,10 +161,12 @@ angular.module('coo')
 	    )
 	}
  	
- 	
+ 	$scope.parseTime = function(date){
+        return moment(date).format('YYYY-MM-DD HH:mm:ss');
+    };
 // 	添加，显示时间框
 	$scope.time_a=function(card_id,index){
-		var item_dataA={'type':'time','data':''}
+		var item_dataA={'type':'time','data':moment($scope.dd).format()}
 		item_dataA = angular.toJson(item_dataA);//自动转换成对象
 		apiServ.post('/api/item/add',{
 			card_id:card_id,
@@ -172,7 +174,6 @@ angular.module('coo')
 		    item_data:item_dataA
 		}).then(
 	        function(data){
-	        	$scope.show_a=true;
 	        	get_board()
 	        },
 	        function(err){
@@ -180,114 +181,28 @@ angular.module('coo')
 	        }
 	    )
 	}
-	
-// 	显示时间插件，还有时间插件本身
-	$scope.time=function(index){
-	  	$('.txt_time').eq(index).next().css('display','block')//显示时间插件
-		//年月日，插件
-	  	$scope.clear = function() {
-	    	$scope.dt = null;
-	  	};
-	
-	  	$scope.inlineOptions = {
-	    	customClass: getDayClass,
-	    	minDate: new Date(),
-	    	showWeeks: true
-	  	};
-	
-	  	$scope.dateOptions = {
-	    	dateDisabled: disabled,
-	    	formatYear: 'yy',
-	    	maxDate: new Date(2020, 5, 22),
-	    	minDate: new Date(),
-	    	startingDay: 1
-	  	};
-	
-	 	 // Disable weekend selection
-	  	function disabled(data) {
-	    	var date = data.date,
-	      	mode = data.mode;
-	    	return mode === 'day' && (date.getDay() === 0 || date.getDay() === 6);
-	  	}
-	
-	  	$scope.toggleMin = function() {
-	    	$scope.inlineOptions.minDate = $scope.inlineOptions.minDate ? null : new Date();
-	    	$scope.dateOptions.minDate = $scope.inlineOptions.minDate;
-	  	};
-	
-	  	$scope.toggleMin();
-	  
-	  	$scope.open2 = function() {
-	    	$scope.popup2.opened = true;
-	  	};	
-
-
-	  	$scope.popup2 = {
-	    	opened: false
-	  	};
-	
-	  	function getDayClass(data) {
-	    	var date = data.date,
-	      	mode = data.mode;
-	    	if (mode === 'day') {
-		      	var dayToCheck = new Date(date).setHours(0,0,0,0);
-		
-		      	for (var i = 0; i < $scope.events.length; i++) {
-		        	var currentDay = new Date($scope.events[i].date).setHours(0,0,0,0);
-		
-		        	if (dayToCheck === currentDay) {
-		         	 return $scope.events[i].status;
-		        	}
-		      	}
-	    	}
-		    return '';
-		}
-	  
-	  	
-	//	小时,分钟,秒时间插件
-	  	$scope.hstep = 1;
-	  	$scope.mstep = 15;
-	
-	 	 $scope.options = {
-	    	hstep: [1, 2, 3],
-	    	mstep: [1, 5, 10, 15, 25, 30]
-	  	};
-	
-	  	$scope.ismeridian = true;
-	  	$scope.toggleMode = function() {
-	    	$scope.ismeridian = ! $scope.ismeridian;
-	  	};
-	
-	 	 $scope.update = function() {
-	    	var d = new Date();
-	    	d.setHours( 14 );
-	    	d.setMinutes( 0 );
-	    	$scope.dt = d;
-	  	};
-	
-	  	$scope.clear = function() {
-	    	$scope.mytime = null;
-	  	};
-//	  	编辑时间,完成
-		$scope.complete=function(card_id,index){
-			var item_dataC={'type':'time','data':$('.txt_time').eq(index).html()}
+	//编辑时间 显示
+	$scope.edit_time=function(event){
+		$(event.target).next().css('display','block')
+	}
+	//编辑时间,完成
+		$scope.complete=function(card_id,item_id,item,event){
+			var item_dataC={'type':'time','data':item.dataJson[0].data}
 			item_dataC = angular.toJson(item_dataC);//自动转换成对象
 			apiServ.post('/api/item/edit',{
 				board_id:board_id,
 	    		card_id:card_id,
-	    		item_id:$scope.time_id,
+	    		item_id:item_id,
 	    		item_data:item_dataC
 			}).then(
 		        function(data){
+		        	$(event.target).parent().css('display','none')
 			    },
 			    function(err){
 			    	console.log('ajax错误~~'+err) 
 			    }    
 			)    
-		  	$('.txt_time').eq(index).next().css('display','none')
 		}
-		
-	}
 	
 	//添加显示  @框
 	$scope.add_aite=function(card_id,index){
@@ -349,7 +264,7 @@ angular.module('coo')
 //	        	console.log('已改变')
 				at_html()
 //				$scope.attn=false;
-$(event.target).parent().css('display','none')
+				$(event.target).parent().css('display','none')
 	        },
 	        function(err){
 	          	console.log('ajax错误~~'+err) 
@@ -374,7 +289,7 @@ $(event.target).parent().css('display','none')
 	        }
 	    )
 	}
-	$scope.readItemImage = function(file,item){
+	$scope.readItemImage = function(file,item,card_id,item_id,event){
 		console.log('上传图片')
         if(!file){
             return;
@@ -384,8 +299,28 @@ $(event.target).parent().css('display','none')
             item.dataJson[0].data.dataUrl = reader.result;
         }
         reader.readAsDataURL(file);
-
+		
+		setTimeout(function(){
+			apiServ.post('/api/item/edit',{
+			board_id:board_id,
+    		card_id:card_id,
+    		item_id:item_id,    			item_data:angular.toJson({'type':'image','data':{url:item.dataJson[0].data.url,title:item.dataJson[0].data.title,dataUrl:item.dataJson[0].data.dataUrl}})
+		}).then(
+	        function(data){
+			
+	        },
+	        function(err){
+	          	console.log('ajax错误~~'+err) 
+	        }
+	    )
+			$('.img_edit').css('display','none')
+		},500)
     }
+	//编辑图片
+	$scope.img_replace=function(event){
+		console.log('开始编辑')
+		$(event.target).parents('.image').find('.img_edit').css('display','block')
+	}
 	//添加卡片
 	$scope.save=function(){
 		card_name=$('.card_name').val();//创建新卡片时，让创建的卡片名字显示在新卡片上
@@ -467,12 +402,53 @@ $(event.target).parent().css('display','none')
 	        }
 	    )
 	}
+	
+	//留言板
+	//点击添加评论
+		$scope.comment_add=function(){
+			apiServ.post("/api/comment/add",{
+        	board_id:board_id,
+            comment_content:$scope.comment_content
+        }).then(function(data){
+        	$scope.comment_content=""
+        })
+       
+        
+    //点击之后再次获取评论
+	    apiServ.post("/api/comment/all",{
+			board_id:board_id
+		}).then(function(data){
+	        	$scope.comment_all=data;
+	    })
+		//滚动条到最底部
+        $scope.scrollWindow=function(){ var _el=document.getElementById('yan_div1'); _el.scrollTop=_el.scrollHeight;};
+
+			$timeout(function(){ $scope.scrollWindow(); },500);
+
+		}
+		//获取评论
+		apiServ.post("/api/comment/all",{
+			board_id:board_id
+		}).then(function(data){
+        	$scope.comment_all=data;
+        })
+		
+		//删除评论
+		$scope.comment_delete=function(id){
+			apiServ.post("/api/comment/delete",{
+				board_id:board_id,
+                comment_id:id
+			})
+		//删除之后获取评论
+		apiServ.post("/api/comment/all",{
+			board_id:board_id
+		}).then(function(data){
+        	$scope.comment_all=data;
+        })	
+		}
 })
 
-//	        	var html = '<hello></hello>';
-//	        	var content = $compile(html)($scope);//在angular中给动态创建的元素编译，让创建的ng都可以使用
-//				$(content).insertBefore(".new-card");
-//				$scope.card_title=$('.card_name').val();//创建新卡片时，让创建的卡片名字显示在新卡片上
+
 
 
 

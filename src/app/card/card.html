@@ -40,25 +40,24 @@
 					<!--添加新条目-->
 					<div ng-repeat="rr in tt.items">
 						<span class="add-item">
-							<div ng-if="rr.dataJson[0].type=='image'">
-			                    <div>
+							<div ng-if="rr.dataJson[0].type=='image'" class="image">
+			                    <div ng-click="img_replace($event)">
 			                        <div style="text-align:center;">{{rr.dataJson[0].data.title}}</div>
 			                        <img ng-src="{{rr.dataJson[0].data.dataUrl}}" style="width:100%;"></img>
 			                    </div>
-			                    <div>
+			                    <div class='img_edit' style="display: none;">
 			                        <input ng-model="rr.dataJson[0].data.title" class="form-control" style="width:100%">
-			                        <div style="display:block;" class="btn btn-default" ngf-select="readItemImage($file,rr)" ng-model="file" ngf-max-size="500KB"
+			                        <div style="display:block;" class="btn btn-default" ngf-select="readItemImage($file,rr,tt.id,rr.id,$event)" ng-model="file" ngf-max-size="500KB"
 			                            >选择图片(500KB以内)</div>
-			                        <img ng-src="{{rr.dataJson[0].data.dataUrl}}" style="width:100%;"></img>
 			                    </div>
 		                	</div>
 							<div ng-if="rr.dataJson[0].type=='text'">
-								<input type="text" class="txt" ng-blur="blur($event,tt.id,rr.id)" ng-model="rr.dataJson[0].data">
+								<input type="text" class="txt" ng-blur="blur($event,tt.id,rr.id)" ng-model="rr.dataJson[0].data" placeholder="新文本">
 								<button  type="button" class="close" ng-click="closeAlert(tt.id,rr.id)">
 								    <span>×</span>
 				    			</button>
 							</div>
-							<div ng-if="rr.dataJson[0].type=='checkbox'" ">
+							<div ng-if="rr.dataJson[0].type=='checkbox'" >
 								<input type="checkbox" ng-checked="rr.dataJson[0].data.checked" ng-model="rr.dataJson[0].data.checked" ng-change="check(tt.id,$event,rr.id,rr.dataJson[0].data.checked)">
 						  		<input style="border:none;background:#e2e2e2" type="text" ng-model="rr.dataJson[0].data.text">
 						  		<button  type="button" class="close" ng-click="closeAlert(tt.id,rr.id)">
@@ -73,21 +72,17 @@
 								    <span>×</span>
 				    			</button>
 			                </div>
-							<!--<div class='txt_time' ng-show='show_a'  ng-click="time($index)" ng-model="dt">{{dt | date:'yyyy-MM-dd HH:mm:ss'}}</div>
-							
-						  	<div class="sel" ng-show="sel">
-						  		<input type="checkbox" ng-checked="sel_che" ng-model="sel_che" ng-change="check(tt.id,$event)">
-						  		<input type="text" ng-model="新选择框">
-						  	</div>
-						  	
-						  	<div class="aite" ng-show="at">
-						  		<span ng-click="aite()">@用户名</span>
-						  		<b ng-model="yonghu">{{yonghu}}</b>
-						  		<ul ng-show="attn"><li ng-click="selName(index,$event,tt.id)" ng-repeat="d in atName">{{d.name}}</li></ul>
-						  		<button  type="button" class="closeA" ng-click="closeAlert(tt.id,rr.id)">
+			                <div ng-if="rr.dataJson[0].type=='time'">
+			                    <div ng-click="edit_time($event)" style="display:inline-block">时间：{{parseTime(rr.dataJson[0].data)}}</div>
+			                    <div style="text-align:center;margin-top: 10px;display:none">
+			                        <div uib-datepicker ng-model="rr.dataJson[0].data" class="well well-sm" ></div>
+			                        <div uib-timepicker ng-model="rr.dataJson[0].data" hour-step="1" minute-step="1" show-meridian="false" show-seconds="true"></div>
+			                        <button type="button" class="time_edit" ng-click="complete(tt.id,rr.id,rr,$event)">Complete</button>
+			                    </div>
+			                    <button  type="button" class="close" ng-click="closeAlert(tt.id,rr.id)">
 								    <span>×</span>
 				    			</button>
-						  	</div>-->
+			                </div>
 						</span>  
 					</div>
 				</div>				
@@ -97,7 +92,25 @@
 				<input type='submit' class="card-save" ng-click="save()" value='保存'>
 			</div>
 			<div style="clear: both;"></div>
-		</div>		
+		</div>
+		<div id="yan_div1">
+			<div id="yan_op" ng-repeat="data in comment_all">
+				<span id="yan_sp1">
+					<a>{{data.content}}</a>
+				    <i id="yan_sp3" class="glyphicon glyphicon-trash" ng-click="comment_delete(data.id)"></i>
+				</span>
+				<span id="yan_sp2">
+						<a class="yan_name">{{data.user_name}}</a>
+						<a id="yan_right">{{data.create_time}}</a>
+				</span>
+			</div>
+			
+			
+		</div>
+		<div id="yan_hq">
+				<input type="text" id="yan_te" ng-model='comment_content'/>
+				<a id="yan_bttn" ng-click="comment_add()" class="glyphicon glyphicon-play"></a>
+		</div>
 	</div>
 </div>
 

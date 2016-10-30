@@ -11,7 +11,7 @@ body {
 	background: url(../../assets/img/content.jpg) no-repeat;
 }
 .card-zt:hover{
-         box-shadow: 4px 4px 7px rgba(0,0,0,0.8) !important;
+        box-shadow: 4px 4px 7px rgba(0,0,0,0.8) !important;
 }
 .card-zt{	
     width: 330px;
@@ -145,7 +145,34 @@ body {
     border-radius: 32px;
     color: black;
 }   
+.time_edit {
+	display: inline-block;
+	padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+    color: #fff;
+    background-color: #5bc0de;
+    border-color: #46b8da;
+    border: 1px solid transparent;
+    position: relative;
+    top: -66px;
+    left: 100px;
+}
+.time_edit:hover {
+	box-shadow: 2px 2px 3px rgba(0,0,0,0.8) !important;
+}
+.btn-sm{
+    padding: 5px 8px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+}
 
+.well-sm {
+    padding: 6px;
+    border-radius: 3px;
+}
 button.btn.btn-danger {
     color: #fff;
     background-color: #d9534f;
@@ -159,9 +186,9 @@ div.row {
 }
 .time-a {
     width: 100%;
-    padding-left: 11px;
     margin-bottom: 30px;
     display: none;
+    margin-top: 10px;
 }
 .card-title p {
   	color: #3d78ae;
@@ -193,6 +220,7 @@ div.row {
     right: 0;
     bottom: 0;
     left: 0;
+    width:73%;
 }
 .card-canvas{
 	position: relative;
@@ -238,7 +266,7 @@ div.row {
 	margin-right:10px;
 	margin-bottom:10px;
 }
-.alert-dismissible .close {
+.complete {
     position: relative;
     top: 5px;
     right: 5px;
@@ -246,7 +274,6 @@ div.row {
     
 }
 p.input-group {
-	width: 317px;
 }
 .sel{
 	outline: 10px solid #fcf8e3;
@@ -352,3 +379,89 @@ div.alert.ng-scope.ng-isolate-scope.alert-warning.alert-dismissble {
 	height: 20px;
 	line-height: 20px;
 }
+#yan_div1{
+				width: 240px;
+				height: 88%;
+				overflow: overlay;
+				padding: 18px 0;
+				background: #dbc1c4;
+				position: fixed;
+				right: 0;
+			}
+			#yan_op{
+				width: 200px;
+				/*height: 126px;*/
+				margin: 0 auto;
+				margin-bottom: 30px;
+			}
+			#yan_hq{
+				width: 200px;
+				height: 36px;
+				position: fixed;
+				bottom: 5%;
+				right: 2%;
+				margin-left: 21px;
+			}
+			#yan_te{
+				width: 155px;
+				height: 35px;
+				border: 0;
+				border-radius: 2px;
+			}
+			#yan_bttn{
+				width: 41px;
+				height: 35px;
+				border: 0;
+				background: #fff;
+				border-left: 1px solid #cccccc;
+				text-align: center;
+				line-height: 35px;
+				border-radius: 2px;
+			}
+			#yan_sp1{
+				display: block;
+				width: 195px;
+				height: 62px;
+				background: #5bc0de;
+				border-radius: 13px 13px 0 0;
+				margin: 0 auto;
+				font-size: 17px;
+				line-height: 62px;
+				color: #fff;
+				padding-left:5px;
+			}
+			#yan_sp1 a {
+				display: block;
+				width: 100px;
+				height: 62px;
+				overflow: hidden;
+				color: white;
+				float: left;
+			}
+			#yan_sp3{
+				display: block;
+				width: 50px;
+				height: 62px;
+				box-sizing: border-box;
+				line-height: 62px;
+				text-align: center;
+				float: right;
+			}
+			#yan_sp2{
+				display: block;
+				width: 195px;
+				height: 64px;
+				background: #ffffff;
+				border-radius: 0 0 13px 13px;
+				margin: 0 auto;
+				color: #000;
+				font-size: 12px;
+				line-height: 62px;
+				padding-left: 5px;
+			}
+			.yan_name{
+				float: left;
+			}
+			#yan_right{
+				float: right;
+			}

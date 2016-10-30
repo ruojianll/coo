@@ -1,15 +1,18 @@
-<div id="yan_div1">
-			<div id="yan_op">
-				<span id="yan_sp1">送积分卡</span>
+		<div id="yan_div1">
+			<div id="yan_op" ng-repeat="data in comment_all">
+				<span id="yan_sp1">
+					<a>{{data.content}}</a>
+				    <i id="yan_sp3" class="glyphicon glyphicon-trash" ng-click="comment_delete(data.id)"></i>
+				</span>
 				<span id="yan_sp2">
-						<a class="yan_name">{{user_name}}</a>
-						<a id="yan_right">2016-10-19 14:24:10</a>
+						<a class="yan_name">{{data.user_name}}</a>
+						<a id="yan_right">{{data.create_time}}</a>
 				</span>
 			</div>
-			<div style="clear: both;"></div>
-			<div id="yan_hq">
-				<input type="text" id="yan_te" />
-				<a id="yan_bttn" ng-click="dianji()" class="glyphicon glyphicon-play"></a>
-			</div>
 			
+			
+		</div>
+		<div id="yan_hq">
+				<input type="text" id="yan_te" ng-model='comment_content'/>
+				<a id="yan_bttn" ng-click="comment_add()" class="glyphicon glyphicon-play"></a>
 		</div>

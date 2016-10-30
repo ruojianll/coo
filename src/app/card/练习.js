@@ -12,3 +12,9 @@
 
 //		var item_data={type:"text",data:""};
 //		item_data = angular.toJson(item_data);//自动转换成对象
+
+
+//	        	var html = '<hello></hello>';
+//	        	var content = $compile(html)($scope);//在angular中给动态创建的元素编译，让创建的ng都可以使用
+//				$(content).insertBefore(".new-card");
+//				$scope.card_title=$('.card_name').val();//创建新卡片时，让创建的卡片名字显示在新卡片上
