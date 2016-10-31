@@ -28,41 +28,6 @@ angular.module('coo')
 						data.cards[i].items[j].dataJson.push(angular.fromJson(data.cards[i].items[j].data));
 					}
 				}
-				
-//				for(var t=0;t<data.cards.length;t++){
-//					data.cards[t].item_new=[];
-//					var atItem=t;
-//					for(var r=0;r<data.cards[t].items.length;r++){
-//						//把type是text的条目都循环一遍
-//						if(data.cards[t].items[r].dataJson[0].type=='text'){
-//							data.cards[t].item_new.push(data.cards[t].items[r])
-//						}
-//						//让type是time的条目显示
-//						if(data.cards[t].items[r].dataJson[0].type=='time'){
-//							$scope.show_a=true;
-//							$scope.time_id=data.cards[t].items[r].id;
-//						}
-//						//让type是checkbox的条目显示
-//						if(data.cards[t].items[r].dataJson[0].type=='checkbox'){
-//							$scope.sel=true;
-//							$scope.check_box=data.cards[t].items[r].id;
-//							if(data.cards[t].items[r].dataJson[0].data.checked==true){
-//								$scope.sel_che=true
-//							}
-//							if(data.cards[t].items[r].dataJson[0].data.checked==false){
-//								$scope.sel_che=false
-//							}
-//						}
-//						//让type是at的条目显示
-//						if(data.cards[t].items[r].dataJson[0].type=='at'){
-//							console.log('已有@```````')
-//							$scope.at=true;
-//							$scope.at_yonghu=data.cards[t].items[r].id;
-//							$scope.yonghu=data.cards[t].items[r].dataJson[0].data
-//						}
-//					}
-//				}
-				
 		        console.log(data)
 		    },
 		    function(err){
@@ -72,11 +37,6 @@ angular.module('coo')
 	}
 	get_board()
 	$scope.card_show=true;
-	$scope.sel_che=false;
-	$scope.sel=false;
-	$scope.at=false;
-	$scope.show_a=false;//隐藏时间框
- 	$scope.show_b=false;//隐藏时间插件
  	$scope.dd=new Date();
 	//添加新文本,添加条目
 	$scope.addAlert = function(card_id) {
@@ -215,8 +175,6 @@ angular.module('coo')
 		}).then(
 	        function(data){
 	        	get_board()
-//	        	$scope.at=true;
-//	        	$('.aite').eq(index).css('display','block')
 	        },
 	        function(err){
 	        	console.log('ajax错误~~'+err) 
@@ -261,9 +219,7 @@ angular.module('coo')
     		item_id:item_id,    			item_data:angular.toJson({'type':'at','data':$(event.target).parents('.aite').find('b').html()+','+event.target.innerHTML})
 		}).then(
 	        function(data){
-//	        	console.log('已改变')
 				at_html()
-//				$scope.attn=false;
 				$(event.target).parent().css('display','none')
 	        },
 	        function(err){
