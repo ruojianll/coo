@@ -225,7 +225,8 @@ div.row {
 .card-canvas{
 	position: relative;
     flex-grow: 1;
- 	min-height: 536px;
+    /*-webkit-min-logical-height: 536px;*/
+ 	min-height: 524px;
  	position: relative;
 }
 #card-scroll{
