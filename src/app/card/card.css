@@ -225,7 +225,7 @@ div.row {
 .card-canvas{
 	position: relative;
     flex-grow: 1;
- 	min-height: 525px;
+ 	min-height: 536px;
  	position: relative;
 }
 #card-scroll{
@@ -255,7 +255,7 @@ div.row {
 	height: 435px;
 	overflow-y: auto;
 	overflow-x: hidden;
-	/*padding-bottom: 20px;*/
+	padding-bottom: 20px;
 }
 .add-item {
 	padding: 10px;
@@ -380,88 +380,103 @@ div.alert.ng-scope.ng-isolate-scope.alert-warning.alert-dismissble {
 	line-height: 20px;
 }
 #yan_div1{
-				width: 240px;
-				height: 88%;
-				overflow: overlay;
-				padding: 18px 0;
-				background: #dbc1c4;
-				position: fixed;
-				right: 0;
-			}
-			#yan_op{
-				width: 200px;
-				/*height: 126px;*/
-				margin: 0 auto;
-				margin-bottom: 30px;
-			}
-			#yan_hq{
-				width: 200px;
-				height: 36px;
-				position: fixed;
-				bottom: 5%;
-				right: 2%;
-				margin-left: 21px;
-			}
-			#yan_te{
-				width: 155px;
-				height: 35px;
-				border: 0;
-				border-radius: 2px;
-			}
-			#yan_bttn{
-				width: 41px;
-				height: 35px;
-				border: 0;
-				background: #fff;
-				border-left: 1px solid #cccccc;
-				text-align: center;
-				line-height: 35px;
-				border-radius: 2px;
-			}
-			#yan_sp1{
-				display: block;
-				width: 195px;
-				height: 62px;
-				background: #5bc0de;
-				border-radius: 13px 13px 0 0;
-				margin: 0 auto;
-				font-size: 17px;
-				line-height: 62px;
-				color: #fff;
-				padding-left:5px;
-			}
-			#yan_sp1 a {
-				display: block;
-				width: 100px;
-				height: 62px;
-				overflow: hidden;
-				color: white;
-				float: left;
-			}
-			#yan_sp3{
-				display: block;
-				width: 50px;
-				height: 62px;
-				box-sizing: border-box;
-				line-height: 62px;
-				text-align: center;
-				float: right;
-			}
-			#yan_sp2{
-				display: block;
-				width: 195px;
-				height: 64px;
-				background: #ffffff;
-				border-radius: 0 0 13px 13px;
-				margin: 0 auto;
-				color: #000;
-				font-size: 12px;
-				line-height: 62px;
-				padding-left: 5px;
-			}
-			.yan_name{
-				float: left;
-			}
-			#yan_right{
-				float: right;
-			}
+	width: 240px;
+	height: 91%;
+	overflow: overlay;
+	padding: 18px 0;
+	background: #dbc1c4;
+	position: absolute;
+	right: 0;
+	z-index: 33;			
+}
+#yan_op{
+	width: 200px;
+	/*height: 126px;*/
+	margin: 0 auto;
+	margin-bottom: 30px;
+}
+#yan_hq{
+	width: 23%;
+	height: 36px;
+	position: fixed;
+	bottom: 2% !important;
+	right: 1% !important;
+	/*margin-right: 21px;*/
+	margin-right: 0px !important;
+	outline: 26px solid #dbc1c4;
+	z-index: 22;
+	background: #dbc1c4 !important;
+}
+#yan_te{
+	width: 155px;
+	height: 35px;
+	border: 0;
+	border-radius: 2px;
+}
+#yan_bttn{
+	width: 41px;
+	height: 35px;
+	border: 0;
+	background: #fff;
+	border-left: 1px solid #cccccc;
+	text-align: center;
+	line-height: 35px;
+	border-radius: 2px;
+}
+#yan_sp1{
+	display: block;
+	width: 195px;
+	height: 62px;
+	background: #5bc0de;
+	border-radius: 13px 13px 0 0;
+	margin: 0 auto;
+	font-size: 17px;
+	line-height: 62px;
+	color: #fff;
+	padding-left:5px;
+}
+#yan_sp1 a {
+	display: block;
+	width: 100px;
+	height: 62px;
+	overflow: hidden;
+	color: white;
+	float: left;
+}
+#yan_sp3{
+	display: block;
+	width: 50px;
+	height: 62px;
+	box-sizing: border-box;
+	line-height: 62px;
+	text-align: center;
+	float: right;
+}
+#yan_sp2{
+	display: block;
+	width: 195px;
+	height: 64px;
+	background: #ffffff;
+	border-radius: 0 0 13px 13px;
+	margin: 0 auto;
+	color: #000;
+	font-size: 12px;
+	line-height: 62px;
+	padding-left: 5px;
+}
+.yan_name{
+	float: left;
+}
+#yan_right{
+	float: right;
+}
+.liulan_board{
+	width: 240px;
+	height: 91%;
+	overflow: overlay;
+	padding: 18px 0;
+	background: #dbc1c4;
+	position: absolute !important;
+	right: 0;
+	z-index: 33;
+}

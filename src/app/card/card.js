@@ -1,5 +1,5 @@
 angular.module('coo')
-.controller('card', function ($scope,$http,apiServ,environment,$state,$log,$compile,$sce,$stateParams) {//
+.controller('card', function ($scope,$http,apiServ,environment,$state,$log,$compile,$sce,$stateParams,$timeout) {//
 //获取当前board板的board_id
 //	url=window.location.href;
 //	url.split('=')[1];
