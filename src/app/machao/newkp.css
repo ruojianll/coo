@@ -14,9 +14,9 @@ overflow:auto;
 .ma-lan{width:200px;height:80px;float:left;margin-top:30px;background: #347ab6;text-align:center;color:#fff;font-size:18px;}
 .ma-lanp{width:200px;height:80px;float:left;margin-top:30px;background:#347ab6;text-align:center;color:#fff;font-size:18px;cursor: pointer;}
 .ma-lanp p{display: block;line-height:75px;font-size:25px;}
-.ma-xin{width:200px;height:80px;float:left;margin-top:30px;background: #347ab6;text-align:center;color:#fff;font-size:18px;cursor: pointer;}
+.ma-xin{width:200px;height:80px;float:left;margin-top:30px;background: #347ab6;text-align:center;color:#fff;font-size:18px;cursor: pointer;margin-right:16px;}
 .ma-xin p{display: block;line-height:75px;font-size:25px;}
-.ma-jiayi{width:200px;height:80px;float:left;margin-top:30px;background: #347ab6;text-align:center;color:#fff;font-size:18px;margin-right:16PX;}
+.ma-jiayi{width:200px;height:80px;float:left;margin-top:30px;background: #347ab6;text-align:center;color:#fff;font-size:18px;margin-right:16px;}
 .jakuandi{float:left;}
 .jakuaner{float:left;}
 

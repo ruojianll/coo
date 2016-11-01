@@ -23,7 +23,7 @@
         url: '/machao',
         templateUrl: 'app/machao/newkp.html',
         controller: 'comder'
-      }).state('wzy.yan', {
+      }).state('wzy.card.yan', {
         url: '/yan',
         templateUrl: 'app/lyan/liuyan.html',
         controller: 'yan'

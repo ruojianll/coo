@@ -1,4 +1,7 @@
-		<div id="yan_div1">
+	<div id="yan_div1" >
+			<h2 style="font-size: 23px;line-height:36px;text-align: center;">留言板</h2>
+			<hr style="width:100%;height: 1px;background: #DBC227;margin-bottom: 15px;">
+			<div class="liulan_parent">
 			<div id="yan_op" ng-repeat="data in comment_all">
 				<span id="yan_sp1">
 					<a>{{data.content}}</a>
@@ -9,10 +12,9 @@
 						<a id="yan_right">{{data.create_time}}</a>
 				</span>
 			</div>
-			
-			
-		</div>
-		<div id="yan_hq">
+			<div id="yan_hq">
 				<input type="text" id="yan_te" ng-model='comment_content'/>
 				<a id="yan_bttn" ng-click="comment_add()" class="glyphicon glyphicon-play"></a>
+		    </div>
 		</div>
+		

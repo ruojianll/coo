@@ -41,8 +41,7 @@ body {
 }
 #bord-dele{
  	float: right;
- 	margin-right: 30px;
- 	margin-top: 20px;
+ 	line-height: 36px;
  	cursor: pointer;
  }
 .card-top p input {
@@ -190,23 +189,33 @@ div.row {
     display: none;
     margin-top: 10px;
 }
-.card-title p {
-  	color: #3d78ae;
-    line-height: 53px;
-    font-size: 23px;
+.card-title a {
+  	width: 50px;
+  	height: 40px;
+  	position: absolute;
+  	z-index: 1;
+  	left: 275px;
+  	background: #d6c2b7;
 }
-.card-title p input {
+.card-title  input {
     background: none;
-    border: none;    
+    border: none;  
+    outline: none;
+    width: 300px; 
+    height: 36px;
+    line-height: 36px;
 }
 .card-main{
   	height: 100%;
   	padding-left: 20px;
 }
-.card-title p{
-  	color: #3d78ae;
-    line-height: 53px;
-    font-size: 23px;
+.card-title {
+   color: #3d78ae;
+   font-size: 23px;
+   width: 500px;
+   height: 50px;
+   padding-top: 7px;
+   box-sizing: border-box;
 }
 .card-show{
  	display: inline-block;
@@ -379,105 +388,4 @@ div.alert.ng-scope.ng-isolate-scope.alert-warning.alert-dismissble {
 .aite ul li {
 	height: 20px;
 	line-height: 20px;
-}
-#yan_div1{
-	width: 240px;
-	height: 91%;
-	overflow: overlay;
-	padding: 18px 0;
-	background: #dbc1c4;
-	position: absolute;
-	right: 0;
-	z-index: 33;			
-}
-#yan_op{
-	width: 200px;
-	/*height: 126px;*/
-	margin: 0 auto;
-	margin-bottom: 30px;
-}
-#yan_hq{
-	width: 23%;
-	height: 36px;
-	position: fixed;
-	bottom: 2% !important;
-	right: 1% !important;
-	/*margin-right: 21px;*/
-	margin-right: 0px !important;
-	outline: 26px solid #dbc1c4;
-	z-index: 22;
-	background: #dbc1c4 !important;
-}
-#yan_te{
-	width: 155px;
-	height: 35px;
-	border: 0;
-	border-radius: 2px;
-}
-#yan_bttn{
-	width: 41px;
-	height: 35px;
-	border: 0;
-	background: #fff;
-	border-left: 1px solid #cccccc;
-	text-align: center;
-	line-height: 35px;
-	border-radius: 2px;
-}
-#yan_sp1{
-	display: block;
-	width: 195px;
-	height: 62px;
-	background: #5bc0de;
-	border-radius: 13px 13px 0 0;
-	margin: 0 auto;
-	font-size: 17px;
-	line-height: 62px;
-	color: #fff;
-	padding-left:5px;
-}
-#yan_sp1 a {
-	display: block;
-	width: 100px;
-	height: 62px;
-	overflow: hidden;
-	color: white;
-	float: left;
-}
-#yan_sp3{
-	display: block;
-	width: 50px;
-	height: 62px;
-	box-sizing: border-box;
-	line-height: 62px;
-	text-align: center;
-	float: right;
-}
-#yan_sp2{
-	display: block;
-	width: 195px;
-	height: 64px;
-	background: #ffffff;
-	border-radius: 0 0 13px 13px;
-	margin: 0 auto;
-	color: #000;
-	font-size: 12px;
-	line-height: 62px;
-	padding-left: 5px;
-}
-.yan_name{
-	float: left;
-}
-#yan_right{
-	float: right;
-}
-.liulan_board{
-	width: 240px;
-	height: 91%;
-	overflow: overlay;
-	padding: 18px 0;
-	background: #dbc1c4;
-	position: absolute !important;
-	right: 0;
-	z-index: 33;
 }
