@@ -51,7 +51,7 @@ angular.module('coo').service('apiServ',function($http,environment,$q,$state){
 }).constant('environment',{
 	http:'http://10.115.19.223:8091'
 }).controller('accountServ',function($scope,$http,apiServ,environment,$state){
-	$scope.denglu=functio			n(){
+	$scope.denglu=function(){
 		apiServ.post('/api/account/login',{
 			user_name:$scope.name,
 			password:$scope.psd
